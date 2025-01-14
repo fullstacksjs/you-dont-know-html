@@ -6,7 +6,7 @@ export interface Question {
   codeExample: string | ComponentType;
   options: {
     id: number;
-    text: string;
+    text: string | ComponentType;
   }[];
   explanation: string | ComponentType;
   correctAnswer: number;

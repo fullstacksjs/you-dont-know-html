@@ -10,18 +10,18 @@ interface Props {
 export function Question({ question }: Props) {
   return (
     <section>
-      <h2>question: {renderField(question.question)}</h2>
+      <div>question: {renderField(question.question)}</div>
       <br />
-      <section>code example: {renderField(question.codeExample)}</section>
+      <div>code example: {renderField(question.codeExample)}</div>
       <br />
       options:
       <ul>
         {question.options.map((question) => (
-          <li key={question.id}>{question.text}</li>
+          <li key={question.id}>{renderField(question.text)}</li>
         ))}
       </ul>
       <br />
-      <section>{renderField(question.explanation)}</section>
+      <div>{renderField(question.explanation)}</div>
     </section>
   );
 }
