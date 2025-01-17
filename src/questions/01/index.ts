@@ -1,4 +1,4 @@
-import explanation from "@/mdx/01-explanation.mdx";
+import explanation from "./explanation.mdx";
 
 export default {
   id: 1,

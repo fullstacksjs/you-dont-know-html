@@ -1,4 +1,3 @@
-/* eslint-disable */
 import type { Question } from "@/types";
 
 import { renderField } from "@/lib/utils";
@@ -16,8 +15,8 @@ export function Question({ question }: Props) {
       <br />
       options:
       <ul>
-        {question.options.map((question) => (
-          <li key={question.id}>{renderField(question.text)}</li>
+        {question.options.map((option) => (
+          <li key={option.id}>{renderField(option.text)}</li>
         ))}
       </ul>
       <br />

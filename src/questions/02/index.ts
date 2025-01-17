@@ -1,10 +1,10 @@
-import snippet from "@/components/snippet/02-snippet";
-import question from "@/mdx/02-question.mdx";
+import codeExample from "./code-example";
+import question from "./question.mdx";
 
 export default {
   id: 2,
   question,
-  codeExample: snippet,
+  codeExample,
   options: [
     { id: 1, text: "Second Answer" },
     { id: 2, text: "Second Answer" },

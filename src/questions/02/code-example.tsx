@@ -3,9 +3,9 @@ import { Suspense } from "react";
 
 const code = "<p>test</p>";
 
-export default function Snippet() {
+export default function CodeExample() {
   return (
-    <Suspense fallback={<p>snippet loading...</p>}>
+    <Suspense fallback={<p>loading...</p>}>
       <CodeBlock lang="html">{code}</CodeBlock>
     </Suspense>
   );
