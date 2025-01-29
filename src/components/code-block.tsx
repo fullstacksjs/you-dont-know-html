@@ -1,5 +1,6 @@
 import type { BundledLanguage } from "shiki";
 
+import { use, useMemo } from "react";
 import { codeToHtml } from "shiki";
 
 interface Props {
@@ -7,11 +8,16 @@ interface Props {
   lang: BundledLanguage;
 }
 
-export async function CodeBlock({ children, lang }: Props) {
-  const out = await codeToHtml(children, {
-    lang,
-    theme: "github-dark",
-  });
+export function CodeBlock({ children, lang }: Props) {
+  const codeToHtmlPremiss = useMemo(
+    () =>
+      codeToHtml(children, {
+        lang,
+        theme: "github-dark",
+      }),
+    [children, lang],
+  );
+  const out = use(codeToHtmlPremiss);
 
   return <div dangerouslySetInnerHTML={{ __html: out }} />;
 }
