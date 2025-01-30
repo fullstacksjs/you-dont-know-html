@@ -35,7 +35,7 @@ export function Question({ question, answerQuestion, answer }: Props) {
                 htmlFor={`question-${question.id}-option-${option.id}`}
               >
                 <input
-                  className="appearance-none w-6 h-6 cursor-pointer rounded-full border-2 border-white checked:bg-accent checked:border-accent checked:shadow-radio-ring"
+                  className="appearance-none w-5 h-5 cursor-pointer rounded-full border-2 border-white checked:bg-accent checked:border-accent checked:shadow-radio-ring"
                   id={`question-${question.id}-option-${option.id}`}
                   type="radio"
                   onChange={handleOptionClick(option.id)}
