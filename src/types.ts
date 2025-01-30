@@ -11,3 +11,8 @@ export interface Question {
   explanation: string | ComponentType;
   correctAnswer: number;
 }
+
+export interface Answer {
+  questionId: number;
+  selectedOptionId: number;
+}
