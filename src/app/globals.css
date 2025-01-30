@@ -5,4 +5,22 @@
   --color-foreground: #e6e6e6;
   --color-accent: #f39f47;
   ---color-muted: #ffffff;
+
+  --shadow-radio-ring: 0 0 0 4px var(--color-background) inset,
+    0 0 0 4px var(--color-background) inset;
+}
+
+/* shiki line number */
+code {
+  counter-reset: step;
+  counter-increment: step 0;
+}
+code .line::before {
+  content: counter(step);
+  counter-increment: step;
+  width: 1rem;
+  margin-right: 1.5rem;
+  display: inline-block;
+  text-align: right;
+  color: rgba(115, 138, 148, 0.4);
 }

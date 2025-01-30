@@ -8,7 +8,7 @@ interface Props {
   answer?: Answer;
 }
 
-export function Question({ question, answerQuestion }: Props) {
+export function Question({ question, answerQuestion, answer }: Props) {
   const handleOptionClick = (optionId: number) => {
     return () => answerQuestion(question.id, optionId);
   };
@@ -30,14 +30,21 @@ export function Question({ question, answerQuestion }: Props) {
         {question.options.map((option) => {
           return (
             <li key={option.id}>
-              <button
-                className="flex w-full items-center gap-2 rounded-lg border border-black p-2"
-                type="button"
-                onClick={handleOptionClick(option.id)}
+              <label
+                className="flex w-full items-center gap-3 rounded-lg border border-black p-3 cursor-pointer has-checked:text-accent"
+                htmlFor={`question-${question.id}-option-${option.id}`}
               >
-                <input type="radio" />
-                {renderField(option.text)}
-              </button>
+                <input
+                  className="appearance-none w-6 h-6 cursor-pointer rounded-full border-2 border-white checked:bg-accent checked:border-accent checked:shadow-radio-ring"
+                  id={`question-${question.id}-option-${option.id}`}
+                  type="radio"
+                  onChange={handleOptionClick(option.id)}
+                  checked={
+                    answer ? option.id === answer.selectedOptionId : false
+                  }
+                />
+                <span>{renderField(option.text)}</span>
+              </label>
             </li>
           );
         })}

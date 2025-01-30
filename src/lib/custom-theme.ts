@@ -1802,7 +1802,8 @@ export const customTheme: ThemeRegistrationAny = {
       scope: "support.variable, support.class, entity.name.tag",
       settings: {
         fontStyle: "bold",
-        foreground: "#ff7474",
+        // foreground: "#ff7474",
+        foreground: "#F39F47",
       },
     },
     {
