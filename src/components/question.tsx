@@ -1,10 +1,11 @@
-import type { Question } from "@/types";
+import type { Answer, Question } from "@/types";
 
 import { renderField } from "@/lib/utils";
 
 interface Props {
   question: Question;
   answerQuestion: (questionId: number, selectedOptionId: number) => void;
+  answer?: Answer;
 }
 
 export function Question({ question, answerQuestion }: Props) {
@@ -23,21 +24,23 @@ export function Question({ question, answerQuestion }: Props) {
         )}
       </div>
       <div className="m-5 flex justify-center">
-        <hr className="w-full border text-[#000000]" />
+        <hr className="w-full border text-black opacity-20" />
       </div>
       <ul className="flex flex-col gap-2">
-        {question.options.map((option) => (
-          <li key={option.id}>
-            <button
-              className="flex w-full items-center gap-2 rounded-lg border border-black p-2"
-              type="button"
-              onClick={handleOptionClick(option.id)}
-            >
-              <input name={`question-${question.id}`} type="radio" />
-              {renderField(option.text)}
-            </button>
-          </li>
-        ))}
+        {question.options.map((option) => {
+          return (
+            <li key={option.id}>
+              <button
+                className="flex w-full items-center gap-2 rounded-lg border border-black p-2"
+                type="button"
+                onClick={handleOptionClick(option.id)}
+              >
+                <input type="radio" />
+                {renderField(option.text)}
+              </button>
+            </li>
+          );
+        })}
       </ul>
     </section>
   );
