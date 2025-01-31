@@ -3,7 +3,7 @@ import type { Answer } from "@/types";
 
 import { PreviewsIcon } from "@/components/previews-icon";
 import { Question } from "@/components/question";
-import { allQuestions } from "@/questions/all-questions";
+import questions from "@/questions/all-questions";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -11,9 +11,9 @@ export default function QuizPage() {
   const router = useRouter();
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Answer[]>([]);
-  const currentQuestion = allQuestions[step];
+  const currentQuestion = questions[step];
   const currentAnswer = answers[step];
-  const isEndsQuestion = step === allQuestions.length;
+  const isEndsQuestion = step === questions.length;
 
   const nextStep = () => setStep((prevStep) => prevStep + 1);
   const previewsStep = () => {
@@ -47,7 +47,7 @@ export default function QuizPage() {
           >
             <PreviewsIcon />
             <span className="text-muted font-bold">
-              Question {step + 1}/{allQuestions.length}
+              Question {step + 1}/{questions.length}
             </span>
           </button>
         )}
