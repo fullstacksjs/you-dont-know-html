@@ -1,14 +1,28 @@
-import explanation from "./explanation.mdx";
+import { ChoiceIdentifier } from "@/lib/choice/mod";
+import {
+  type QuestionDefinition,
+  QuestionIdentifier,
+} from "@/lib/question/mod";
 
-export default {
-  id: 1,
-  question: "What does HTML stand for?",
-  codeExample: "",
-  options: [
-    { id: 1, text: "Hyper Text Markup Language" },
-    { id: 2, text: "Hyperlinks and Text Markup Language" },
-    { id: 3, text: "Home Tool Markup Language" },
+const questionDefinition: QuestionDefinition = {
+  id: QuestionIdentifier.of(1),
+  title: "What does HTML stand for?",
+  choices: [
+    {
+      id: ChoiceIdentifier.of(1),
+      content: "Hyper Text Markup Language",
+      isSolution: true,
+    },
+    {
+      id: ChoiceIdentifier.of(2),
+      content: "Hyperlinks and Text Markup Language",
+    },
+    {
+      id: ChoiceIdentifier.of(3),
+      content: "Home Tool Markup Language",
+    },
   ],
-  explanation,
-  correctAnswer: 1,
 };
+
+export default questionDefinition;
+export { questionDefinition };

@@ -1,15 +1,32 @@
+import { ChoiceIdentifier } from "@/lib/choice/mod";
+import {
+  QuestionIdentifier,
+  type QuestionDefinition,
+} from "@/lib/question/mod";
 import codeExample from "./code-example";
-import question from "./question.mdx";
 
-export default {
-  id: 2,
-  question,
-  codeExample,
-  options: [
-    { id: 1, text: "Answer" },
-    { id: 2, text: "Long answer so it should wrap to the next line" },
-    { id: 3, text: "I don’t know" },
+const questionDefinition: QuestionDefinition = {
+  id: QuestionIdentifier.of(2),
+  title: "What does the following HTML snippet represent?",
+  codeExample: codeExample,
+  choices: [
+    {
+      id: ChoiceIdentifier.of(1),
+      content: "An unordered list",
+      isSolution: true,
+    },
+    {
+      id: ChoiceIdentifier.of(2),
+      content: "An ordered list",
+      isSolution: false,
+    },
+    {
+      id: ChoiceIdentifier.of(3),
+      content: "A navigation menu",
+      isSolution: false,
+    },
   ],
-  explanation: "explanation question 2",
-  correctAnswer: 1,
 };
+
+export default questionDefinition;
+export { questionDefinition };
