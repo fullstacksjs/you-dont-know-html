@@ -16,6 +16,7 @@
     "@tailwindcss/postcss": "4.0.0",
     "@types/mdx": "2.0.13",
     "next": "15.2.0-canary.33",
+    "next-view-transitions": "0.3.4",
     "postcss": "8.5.1",
     "react": "19.0.0",
     "react-dom": "19.0.0",

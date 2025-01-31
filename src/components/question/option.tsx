@@ -1,7 +1,8 @@
 "use client";
 import type { ReactNode } from "react";
 
-import { useParams, useRouter } from "next/navigation";
+import { useTransitionRouter } from "next-view-transitions";
+import { useParams } from "next/navigation";
 import { useSessionStorage } from "usehooks-ts";
 
 interface Props {
@@ -12,7 +13,7 @@ interface Props {
 }
 
 export function QuestionOption({ name, children, id, totalNumber }: Props) {
-  const router = useRouter();
+  const router = useTransitionRouter();
   const step = Number(useParams().step);
   const currentStep = step - 1;
   const [answers, setAnswers] = useSessionStorage<number[]>("answers", []);
