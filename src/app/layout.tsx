@@ -1,6 +1,8 @@
 import "./globals.css";
+
 import type { Metadata } from "next";
 
+import { ViewTransitions } from "next-view-transitions";
 import { Rajdhani } from "next/font/google";
 
 const rajdhaniSans = Rajdhani({
@@ -19,12 +21,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${rajdhaniSans.className} bg-background text-foreground antialiased`}
-      >
-        {children}
-      </body>
-    </html>
+    <ViewTransitions>
+      <html lang="en">
+        <body
+          className={`${rajdhaniSans.className} bg-background text-foreground antialiased`}
+        >
+          {children}
+        </body>
+      </html>
+    </ViewTransitions>
   );
 }
