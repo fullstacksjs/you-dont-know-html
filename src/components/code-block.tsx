@@ -1,7 +1,6 @@
 import type { BundledLanguage } from "shiki";
 
-import { customTheme } from "@/lib/custom-theme";
-import { use, useMemo } from "react";
+import { getShikiTheme } from "@/lib/get-shiki-theme";
 import { codeToHtml } from "shiki";
 
 interface Props {
@@ -9,15 +8,14 @@ interface Props {
   lang: BundledLanguage;
 }
 
-export function CodeBlock({ children, lang }: Props) {
-  const codeToHtmlPromise = useMemo(() => {
-    return codeToHtml(children, {
-      lang,
-      theme: customTheme,
-    });
-  }, [children, lang]);
+export async function CodeBlock({ children, lang }: Props) {
+  "use cache";
+  const customTheme = await getShikiTheme();
 
-  const out = use(codeToHtmlPromise);
+  const out = await codeToHtml(children, {
+    lang,
+    theme: customTheme,
+  });
 
   return <div dangerouslySetInnerHTML={{ __html: out }} />;
 }

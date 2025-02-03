@@ -1,8 +1,22 @@
 import type { NextConfig } from "next";
+
 import createMDX from "@next/mdx";
 
 const nextConfig: NextConfig = {
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
+  async redirects() {
+    await Promise.resolve(true);
+    return [
+      {
+        source: "/quiz",
+        destination: "/quiz/1",
+        permanent: true,
+      },
+    ];
+  },
+  experimental: {
+    dynamicIO: true,
+  },
 };
 
 const withMDX = createMDX({
