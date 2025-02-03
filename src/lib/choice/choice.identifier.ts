@@ -3,7 +3,7 @@ export type ChoiceIdentifier<T extends number = number> = T & {
 };
 
 export namespace ChoiceIdentifier {
-  const BRAND_SYMBOL: unique symbol = Symbol.for("ChoiceIdentifier");
+  const CHOICE_IDENTIFIER_SYMBOL: unique symbol = Symbol.for("ChoiceIdentifier");
 
   export function of<
     T extends number | ChoiceIdentifier,
@@ -12,16 +12,24 @@ export namespace ChoiceIdentifier {
     if (ChoiceIdentifier.is(value)) {
       return value;
     }
-    const target: number = Number(value);
-    target.constructor.prototype.brand = BRAND_SYMBOL;
+    const target: Number = new Number(value);
+    // @ts-expect-error: TypeScript does not recognize the dynamic property assignment.
+    target["brand"] = CHOICE_IDENTIFIER_SYMBOL;
     return target as ChoiceIdentifier<V>;
   }
 
   export function is(value: unknown): value is ChoiceIdentifier {
     return (
-      ((typeof value === "number" && Number.isNaN(value) !== false) ||
-        value instanceof Number) &&
-      ((value as ChoiceIdentifier).brand as symbol) === BRAND_SYMBOL
+      ChoiceIdentifier.can(value) &&
+      // @ts-expect-error: TypeScript cannot verify the existence of the 'brand' property.
+      value["brand"] === CHOICE_IDENTIFIER_SYMBOL
+    );
+  }
+
+  export function can(value: unknown): value is number {
+    return (
+      (typeof value === "number" && Number.isNaN(value) === false) ||
+      value instanceof Number
     );
   }
 }

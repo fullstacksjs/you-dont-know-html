@@ -3,22 +3,30 @@ export type QuestionIdentifier = number & {
 };
 
 export namespace QuestionIdentifier {
-  const BRAND_SYMBOL: unique symbol = Symbol.for("QuestionIdentifier");
+  const QUESTION_IDENTIFIER_SYMBOL: unique symbol = Symbol.for("QuestionIdentifier");
 
   export function of(value: number | QuestionIdentifier): QuestionIdentifier {
     if (QuestionIdentifier.is(value)) {
       return value;
     }
-    const target: number = Number(value);
-    target.constructor.prototype.brand = BRAND_SYMBOL;
+    const target: Number = new Number(value);
+    // @ts-expect-error: TypeScript does not recognize the dynamic property assignment.
+    target["brand"] = QUESTION_IDENTIFIER_SYMBOL;
     return target as QuestionIdentifier;
   }
 
   export function is(value: unknown): value is QuestionIdentifier {
     return (
-      ((typeof value === "number" && Number.isNaN(value) !== false) ||
-        value instanceof Number) &&
-      ((value as QuestionIdentifier).brand as symbol) === BRAND_SYMBOL
+      QuestionIdentifier.can(value) &&
+      // @ts-expect-error: TypeScript cannot verify the existence of the 'brand' property.
+      value["brand"] === QUESTION_IDENTIFIER_SYMBOL
+    );
+  }
+
+  export function can(value: unknown): value is number | Number {
+    return (
+      (typeof value === "number" && Number.isNaN(value) === false) ||
+      value instanceof Number
     );
   }
 }
