@@ -1,17 +1,6 @@
-"use client";
-
-import { useSessionStorage } from "usehooks-ts";
+import { Summary } from "@/components/summary";
+import { correctAnswers } from "@/questions/all-questions";
 
 export default function SummaryPage() {
-  const [answers] = useSessionStorage<number[]>("answers", []);
-
-  return (
-    <div>
-      summary page
-      <div>
-        <p>ends - review answers</p>
-        <pre>{JSON.stringify(answers, null, 2)}</pre>
-      </div>
-    </div>
-  );
+  return <Summary correctAnswers={correctAnswers} />;
 }
