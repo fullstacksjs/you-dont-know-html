@@ -14,7 +14,7 @@ export function SummaryResult({ correctAnswers }: Props) {
       if (answers[currentIndex] === currentValue) return previousValue + 1;
       return previousValue;
     },
-    0
+    0,
   );
 
   if (!answers.length) {
