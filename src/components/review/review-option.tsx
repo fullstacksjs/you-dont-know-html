@@ -25,8 +25,6 @@ export function ReviewOption({
   const correctAnswer = correctAnswers[currentStep];
   const isCorrect = correctAnswer === answer;
 
-  console.log({ answer, correctAnswer, optionId });
-
   const isCorrectOption = optionId === correctAnswer;
   const isWrongAnswered = isClient && !isCorrect && answer === optionId;
 
@@ -40,7 +38,7 @@ export function ReviewOption({
           "border-success": isCorrectOption,
           "border-error": isWrongAnswered,
           "border-muted2": !isCorrectOption && !isWrongAnswered,
-        }
+        },
       )}
     >
       <div

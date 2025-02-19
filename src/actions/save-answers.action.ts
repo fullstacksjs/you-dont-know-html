@@ -1,23 +1,18 @@
 "use server";
 
-// import { allQuestions } from "@/questions/all-questions";
-// import { supabase } from "@/supabase";
+import { createPlay } from "@/lib/db";
+import { allQuestions } from "@/questions/all-questions";
 
 export async function saveAnswers(answers: number[]) {
-  console.log("save answers");
-
-  // const answersPromise = allQuestions.map((question, index) =>
-  //   supabase.from("answers").insert({
-  //     questionId: question.id,
-  //     optionId: answers[index],
-  //   })
-  // );
-
-  // const response = await Promise.all(answersPromise);
-
-  await new Promise((resolve) => {
-    setTimeout(resolve, 1000);
+  const playPayload = allQuestions.map((question, index) => {
+    return {
+      questionId: question.id,
+      answerId: answers[index],
+      correct: question.correctAnswer === answers[index],
+    };
   });
 
-  return true;
+  const response = await createPlay(playPayload);
+
+  return response;
 }
