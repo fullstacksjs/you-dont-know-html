@@ -3,6 +3,7 @@ import type { NextConfig } from "next";
 import createMDX from "@next/mdx";
 
 const nextConfig: NextConfig = {
+  reactStrictMode: true,
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
   async redirects() {
     await Promise.resolve(true);
@@ -16,8 +17,8 @@ const nextConfig: NextConfig = {
   },
   experimental: {
     // dynamicIO: true,
-    useCache: true,
     // ppr: true,
+    useCache: true,
   },
 };
 

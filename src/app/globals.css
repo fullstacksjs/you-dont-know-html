@@ -5,6 +5,9 @@
   --color-foreground: #e6e6e6;
   --color-accent: #f39f47;
   ---color-muted: #ffffff;
+  --color-success: #00a16e;
+  --color-error: #ca343e;
+  --color-muted2: #585858;
 
   --shadow-radio-ring: 0 0 0 4px var(--color-background) inset,
     0 0 0 4px var(--color-background) inset;
