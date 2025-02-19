@@ -19,7 +19,15 @@ export const createPlay = async (answers: Answer[]) => {
     },
   });
 
-  console.log({ newPlay });
-
   return newPlay;
 };
+
+export const getAnswersCount = (questionId: number, optionId: number) =>
+  db.answer.count({
+    where: { questionId, answerId: optionId },
+  });
+
+export const getPlayCount = (questionId: number) =>
+  db.answer.count({
+    where: { questionId },
+  });
