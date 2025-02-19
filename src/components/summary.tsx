@@ -9,7 +9,7 @@ const SummaryResult = dynamic(
     loading: () => (
       <h2 className="text-white text-3xl font-bold text-center">{`Calculating result...`}</h2>
     ),
-  },
+  }
 );
 
 interface Props {

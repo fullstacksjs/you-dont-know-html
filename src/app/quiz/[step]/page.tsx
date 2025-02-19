@@ -30,7 +30,7 @@ export default async function QuizPage({ params }: Props) {
 "
     >
       <div className="p-4 md:px-0 w-full md:w-1/2">
-        <Previews step={step} />
+        <Previews baseURL="/quiz" step={step} startPoint="/" />
         <Question question={currentQuestion} />
       </div>
     </main>
