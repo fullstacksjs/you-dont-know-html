@@ -1,5 +1,6 @@
 import type { Question } from "@/types";
 
+import { getPlayCount } from "@/lib/db";
 import { renderField } from "@/lib/utils";
 
 import { OptionWrapper } from "./option-wrapper";
@@ -9,7 +10,9 @@ interface Props {
   step: number;
 }
 
-export function Review({ question, step }: Props) {
+export async function Review({ question, step }: Props) {
+  const playCount = await getPlayCount(question.id);
+
   return (
     <section>
       <div>
@@ -29,6 +32,7 @@ export function Review({ question, step }: Props) {
             key={`${question.id}-${option.id}`}
             step={step}
             option={option}
+            playCount={playCount}
             questionId={question.id}
           />
         ))}

@@ -9,6 +9,7 @@ interface Props {
   correctAnswers: number[];
   optionId: number;
   step: number;
+  percentage: number;
 }
 
 export function ReviewOption({
@@ -16,6 +17,7 @@ export function ReviewOption({
   correctAnswers,
   optionId,
   step,
+  percentage,
 }: Props) {
   const currentStep = step - 1;
   const [answers] = useSessionStorage<number[]>("answers", []);
@@ -27,8 +29,6 @@ export function ReviewOption({
 
   const isCorrectOption = optionId === correctAnswer;
   const isWrongAnswered = isClient && !isCorrect && answer === optionId;
-
-  const percentage = "40%";
 
   return (
     <div
@@ -43,7 +43,7 @@ export function ReviewOption({
     >
       <div
         style={{
-          width: percentage,
+          width: `${percentage}%`,
           height: "100%",
           background: isCorrectOption
             ? "#00a16e"

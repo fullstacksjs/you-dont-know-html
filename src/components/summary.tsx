@@ -9,7 +9,7 @@ const SummaryResult = dynamic(
     loading: () => (
       <h2 className="text-white text-3xl font-bold text-center">{`Calculating result...`}</h2>
     ),
-  },
+  }
 );
 
 interface Props {
@@ -18,8 +18,7 @@ interface Props {
 
 export function Summary({ correctAnswers }: Props) {
   const share = () => {
-    // TODO: navigate to review Choices
-    console.log("not implemented yet");
+    // TODO: share the result
   };
 
   return (

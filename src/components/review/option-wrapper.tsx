@@ -1,8 +1,8 @@
 import type { ComponentType } from "react";
 
+import { getAnswersCount } from "@/lib/db";
 import { renderField } from "@/lib/utils";
 import { correctAnswers } from "@/questions/all-questions";
-// import { supabase } from "@/supabase";
 
 import { ReviewOption } from "./review-option";
 
@@ -13,21 +13,23 @@ interface Props {
   };
   step: number;
   questionId: number;
+  playCount: number;
 }
 
 export async function OptionWrapper({
   option,
   step,
-  // questionId
+  questionId,
+  playCount,
 }: Props) {
-  // const s = await supabase.from("answers").select();
+  const answersCount = await getAnswersCount(questionId, option.id);
 
-  await new Promise((resolve) => {
-    setTimeout(resolve, 1000);
-  });
+  const percentage = (answersCount / playCount) * 100;
+
   return (
     <li>
       <ReviewOption
+        percentage={percentage}
         step={step}
         correctAnswers={correctAnswers}
         optionId={option.id}
