@@ -13,5 +13,5 @@ export const SummaryStore = memo(
 
     return null;
   },
-  () => true
+  () => true,
 );
