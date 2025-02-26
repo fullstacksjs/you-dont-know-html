@@ -1,0 +1,32 @@
+{
+  "language": "en",
+  "version": "0.2",
+  "useGitignore": true,
+  "ignoreRegExpList": ["/[\\u0621-\\u064A]+/"],
+  "words": [
+    "autoincrement",
+    "fullstacksjs",
+    "Shiki",
+    "supabase",
+    "usehooks",
+    "evenodd"
+  ],
+  "ignorePaths": [
+    "node_modules/**",
+    "**/*.gen.ts",
+    ".vscode/**",
+    "*coverage/**",
+    "src/assets/**",
+    "**/locales/*.json",
+    ".husky/**",
+    "pnpm-lock.yaml",
+    ".github/**",
+    "dist/**",
+    "**/messages/*",
+    "**/constants/*",
+    "logs/**",
+    ".deployment/**",
+    "package.json",
+    "src/lib/custom-theme.ts"
+  ]
+}
