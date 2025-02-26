@@ -27,7 +27,6 @@
     "usehooks-ts": "3.1.0"
   },
   "devDependencies": {
-    "@fullstacksjs/config": "1.1.0",
     "@fullstacksjs/eslint-config": "11.5.0",
     "@types/node": "22.10.6",
     "@types/react": "19.0.7",
