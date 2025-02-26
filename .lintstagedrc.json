@@ -1,0 +1,7 @@
+{
+  "*.{md,json,yml,yaml,html}": [
+    "prettier --write",
+    "cspell --no-must-find-files"
+  ],
+  "*.{ts,tsx}": ["prettier --write", "cspell --no-must-find-files"]
+}
