@@ -2,6 +2,7 @@ import "./globals.css";
 
 import type { Metadata } from "next";
 
+// TODO: Migrate to first class support.
 import { ViewTransitions } from "next-view-transitions";
 import { Rajdhani } from "next/font/google";
 

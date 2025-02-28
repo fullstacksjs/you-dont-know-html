@@ -7,23 +7,13 @@ const nextConfig: NextConfig = {
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
   async redirects() {
     await Promise.resolve(true);
-    return [
-      {
-        source: "/quiz",
-        destination: "/quiz/1",
-        permanent: true,
-      },
-    ];
+    return [{ source: "/quiz", destination: "/quiz/1", permanent: true }];
   },
   experimental: {
-    // dynamicIO: true,
-    // ppr: true,
     useCache: true,
   },
 };
 
-const withMDX = createMDX({
-  // Add markdown plugins here, as desired
-});
+const withMDX = createMDX({});
 
 export default withMDX(nextConfig);
