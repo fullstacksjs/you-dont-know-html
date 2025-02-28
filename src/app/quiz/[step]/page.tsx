@@ -10,29 +10,23 @@ export function generateStaticParams() {
 }
 
 interface Props {
-  params: Promise<{
-    step: string;
-  }>;
+  params: Promise<{ step: string }>;
 }
 
 export default async function QuizPage({ params }: Props) {
   const step = Number((await params).step);
   const currentStep = step - 1;
-  const currentQuestion = allQuestions[currentStep];
 
   if (Number.isNaN(step) || step > allQuestions.length || step < 0) {
     return notFound();
   }
 
+  const currentQuestion = allQuestions[currentStep];
+
   return (
-    <main
-      className="flex justify-center md:items-center h-[100dvh]
-"
-    >
-      <div className="p-4 md:px-0 w-full md:w-1/2">
-        <Previews baseURL="/quiz" step={step} startPoint="/" />
-        <Question question={currentQuestion} />
-      </div>
-    </main>
+    <div className="p-4 md:px-0 w-full md:w-1/2">
+      <Previews baseURL="/quiz" step={step} startPoint="/" />
+      <Question question={currentQuestion} />
+    </div>
   );
 }
