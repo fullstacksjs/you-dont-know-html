@@ -9,24 +9,8 @@
     "Shiki",
     "supabase",
     "usehooks",
-    "evenodd"
+    "evenodd",
+    "dont"
   ],
-  "ignorePaths": [
-    "node_modules/**",
-    "**/*.gen.ts",
-    ".vscode/**",
-    "*coverage/**",
-    "src/assets/**",
-    "**/locales/*.json",
-    ".husky/**",
-    "pnpm-lock.yaml",
-    ".github/**",
-    "dist/**",
-    "**/messages/*",
-    "**/constants/*",
-    "logs/**",
-    ".deployment/**",
-    "package.json",
-    "src/lib/custom-theme.ts"
-  ]
+  "ignorePaths": ["pnpm-lock.yaml", ".github/**"]
 }

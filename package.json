@@ -2,6 +2,7 @@
   "name": "you-dont-know-html",
   "version": "0.1.0",
   "private": true,
+  "description": "A blog about HTML",
   "scripts": {
     "build": "next build",
     "dev": "next dev",
