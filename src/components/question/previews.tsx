@@ -11,12 +11,12 @@ interface Props {
 export function Previews({ step, startPoint, baseURL }: Props) {
   return (
     <Link
-      className=" text-white p-2 rounded-lg flex items-center gap-3 cursor-pointer mb-2"
+      className="text-muted1 p-2 rounded-lg flex items-center gap-3 cursor-pointer mb-2"
       href={step === 1 ? startPoint : `${baseURL}/${step - 1}`}
     >
       <PreviewsIcon />
-      <span className="text-muted font-bold">
-        Question {step}/{allQuestions.length}
+      <span className="text-muted1 font-bold">
+        Review {step}/{allQuestions.length}
       </span>
     </Link>
   );
