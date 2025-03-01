@@ -1,18 +1,20 @@
 "use server";
 
-import { createPlay } from "@/lib/db";
+import type { AnswerDto } from "@/lib/db";
+
+import { createGame } from "@/lib/db";
 import { allQuestions } from "@/questions/all-questions";
 
-export async function saveAnswers(answers: number[]) {
-  const playPayload = allQuestions.map((question, index) => {
+export async function saveAnswers(answerIds: number[]) {
+  const answers = allQuestions.map<AnswerDto>((question, index) => {
     return {
       questionId: question.id,
-      answerId: answers[index],
-      correct: question.correctAnswer === answers[index],
+      answerId: answerIds[index],
+      correct: question.correctAnswerId === answerIds[index],
     };
   });
 
-  const response = await createPlay(playPayload);
+  const response = await createGame(answers);
 
   return response;
 }

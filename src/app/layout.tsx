@@ -12,15 +12,9 @@ const rajdhaniSans = Rajdhani({
   weight: ["300", "400", "500", "600", "700"],
 });
 
-export const metadata: Metadata = {
-  title: "You don't know html",
-};
+export const metadata: Metadata = { title: "You don't know html" };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: React.PropsWithChildren) {
   return (
     <ViewTransitions>
       <html lang="en">

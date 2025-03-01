@@ -9,7 +9,7 @@ export const RestartButton = () => {
   return (
     <Link
       className="bg-accent text-background w-1/5 cursor-pointer rounded-md py-2 text-center font-bold text-xl mx-auto"
-      href={"/quiz"}
+      href="/quiz"
       onClick={remove}
     >
       Give It a Go!

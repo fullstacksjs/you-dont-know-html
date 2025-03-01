@@ -2,32 +2,18 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-export const db = prisma;
-
-interface Answer {
+export interface AnswerDto {
   questionId: number;
   answerId: number;
   correct: boolean;
 }
 
-export const createPlay = async (answers: Answer[]) => {
-  const newPlay = await prisma.play.create({
-    data: {
-      answers: {
-        create: answers,
-      },
-    },
-  });
-
-  return newPlay;
+export const createGame = async (answers: AnswerDto[]) => {
+  return prisma.game.create({ data: { answers: { create: answers } } });
 };
 
 export const getAnswersCount = (questionId: number, optionId: number) =>
-  db.answer.count({
-    where: { questionId, answerId: optionId },
-  });
+  prisma.answer.count({ where: { questionId, answerId: optionId } });
 
-export const getPlayCount = (questionId: number) =>
-  db.answer.count({
-    where: { questionId },
-  });
+export const getGamesCount = (questionId: number) =>
+  prisma.answer.count({ where: { questionId } });

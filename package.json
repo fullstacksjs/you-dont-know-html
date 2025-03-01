@@ -14,37 +14,44 @@
   "dependencies": {
     "@mdx-js/loader": "3.1.0",
     "@mdx-js/react": "3.1.0",
-    "@next/mdx": "15.1.4",
-    "@prisma/client": "6.4.0",
-    "@tailwindcss/postcss": "4.0.0",
+    "@next/mdx": "15.2.0",
+    "@prisma/client": "6.4.1",
+    "@tailwindcss/postcss": "4.0.9",
     "@types/mdx": "2.0.13",
     "clsx": "2.1.1",
     "next": "15.2.0-canary.39",
     "next-view-transitions": "0.3.4",
-    "postcss": "8.5.1",
+    "postcss": "8.5.3",
     "react": "19.0.0",
     "react-dom": "19.0.0",
-    "tailwind-merge": "3.0.1",
-    "tailwindcss": "4.0.0",
-    "usehooks-ts": "3.1.0"
+    "tailwind-merge": "3.0.2",
+    "tailwindcss": "4.0.9",
+    "usehooks-ts": "3.1.1"
   },
   "devDependencies": {
-    "@fullstacksjs/eslint-config": "11.5.0",
+    "@fullstacksjs/eslint-config": "11.7.1",
     "@shikijs/rehype": "3.1.0",
-    "@types/node": "22.10.6",
-    "@types/react": "19.0.7",
-    "@types/react-dom": "19.0.3",
+    "@types/node": "22.13.8",
+    "@types/react": "19.0.10",
+    "@types/react-dom": "19.0.4",
     "cspell": "8.17.5",
-    "eslint": "9.18.0",
+    "eslint": "9.21.0",
     "husky": "9.1.7",
     "lint-staged": "15.4.3",
-    "prettier": "3.4.2",
-    "prisma": "6.4.0",
-    "shiki": "1.27.0",
-    "typescript": "5.7.3"
+    "prettier": "3.5.2",
+    "prisma": "6.4.1",
+    "shiki": "3.1.0",
+    "typescript": "5.8.2"
   },
   "volta": {
     "node": "22.13.1",
     "pnpm": "10.2.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@prisma/client",
+      "@prisma/engines",
+      "prisma"
+    ]
   }
 }

@@ -4,9 +4,7 @@ import { allQuestions } from "@/questions/all-questions";
 import { notFound } from "next/navigation";
 
 export function generateStaticParams() {
-  return allQuestions.map((_, index) => ({
-    step: String(index + 1),
-  }));
+  return allQuestions.map((_, index) => ({ step: String(index + 1) }));
 }
 
 interface Props {

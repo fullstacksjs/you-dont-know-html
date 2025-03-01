@@ -12,15 +12,11 @@ const nextConfig: NextConfig = {
     await Promise.resolve(true);
     return [{ source: "/quiz", destination: "/quiz/1", permanent: true }];
   },
-  experimental: {
-    useCache: true,
-  },
+  experimental: { useCache: true },
 };
 
 const withMDX = createMDX({
-  options: {
-    rehypePlugins: [[rehypeShiki, { theme: fullstacksJSTheme }]],
-  },
+  options: { rehypePlugins: [[rehypeShiki, { theme: fullstacksJSTheme }]] },
 });
 
 export default withMDX(nextConfig);

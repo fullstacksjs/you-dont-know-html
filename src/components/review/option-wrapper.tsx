@@ -1,6 +1,6 @@
 import type { QuestionOption } from "@/questions/Question";
 
-import { getAnswersCount, getPlayCount } from "@/lib/db";
+import { getAnswersCount, getGamesCount } from "@/lib/db";
 import { correctAnswers } from "@/questions/all-questions";
 
 import { ReviewOption } from "./review-option";
@@ -12,10 +12,10 @@ interface Props {
 }
 
 export async function OptionWrapper({ option, step, questionId }: Props) {
-  const playCount = await getPlayCount(questionId);
+  const gamesCount = await getGamesCount(questionId);
   const answersCount = await getAnswersCount(questionId, option.id);
 
-  const percentage = (answersCount / playCount) * 100;
+  const percentage = (answersCount / gamesCount) * 100;
 
   return (
     <li>
