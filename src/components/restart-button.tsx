@@ -1,18 +1,19 @@
 "use client";
 
+import { cn } from "@/lib/cn";
 import Link from "next/link";
 import { useSessionStorage } from "usehooks-ts";
 
-export const RestartButton = () => {
+import { Button } from "./button";
+
+export const RestartButton = ({ className }: { className?: string }) => {
   const [, , remove] = useSessionStorage("answers", []);
 
   return (
-    <Link
-      className="bg-accent text-background w-1/5 cursor-pointer rounded-md py-2 text-center font-bold text-xl mx-auto"
-      href="/quiz"
-      onClick={remove}
-    >
-      Give It a Go!
-    </Link>
+    <Button asChild className={cn("mx-auto", className)}>
+      <Link href="/quiz" onClick={remove}>
+        Give It A Go!
+      </Link>
+    </Button>
   );
 };

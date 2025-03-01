@@ -2,13 +2,11 @@ import { RestartButton } from "@/components/restart-button";
 
 export default function HomePage() {
   return (
-    <main className="flex h-[100dvh] flex-col justify-center p-4">
-      <div className="flex h-full flex-col gap-10 justify-center">
-        <h2 className="text-center text-4xl/normal font-bold">
-          YOU DON’T KNOW <span className="text-accent block">HTML</span>
-        </h2>
-        <RestartButton />
-      </div>
+    <main className="grid gap-24 welcome-main h-[100dvh] px-12 py-16 md:p-0">
+      <h2 className="text-center text-hero area-[hero]">
+        YOU DON’T KNOW <span className="text-accent block">HTML</span>
+      </h2>
+      <RestartButton className="area-[btn]" />
     </main>
   );
 }

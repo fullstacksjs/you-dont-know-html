@@ -5,13 +5,36 @@
   --color-foreground: #e6e6e6;
   --color-accent: #f39f47;
   ---color-muted: #ffffff;
-  --color-muted1: #FFFFFF66;
+  --color-muted1: #ffffff66;
   --color-success: #00a16e;
   --color-error: #ca343e;
   --color-muted2: #585858;
 
-  --shadow-radio-ring: 0 0 0 4px var(--color-background) inset,
-    0 0 0 4px var(--color-background) inset;
+  --spacing: 2px;
+
+  --text-hero: 50px;
+  --text-hero--line-height: 1.3;
+  --text-hero--font-weight: 700;
+
+  --shadow-radio-ring: 0 0 0 4px var(--color-background);
+}
+
+@utility area-* {
+  grid-area: --value([ *]);
+}
+
+.welcome-main {
+  grid-template:
+    "." 1fr
+    "hero" 1fr
+    "btn" auto;
+
+  @media (width >= 48rem) {
+    place-content: center;
+    grid-template:
+      "hero" auto
+      "btn" auto / 400px;
+  }
 }
 
 /* shiki line number */
@@ -19,6 +42,7 @@ code {
   counter-reset: step;
   counter-increment: step 0;
 }
+
 code .line::before {
   content: counter(step);
   counter-increment: step;
