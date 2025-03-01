@@ -25,7 +25,11 @@ export default async function QuizPage({ params }: Props) {
 
   return (
     <div className="p-4 md:px-0 w-full md:w-1/2">
-      <Previews baseURL="/quiz" step={step} startPoint="/" />
+      <Previews
+        getHref={(s) => `/quiz/${s}`}
+        getLabel={(s) => `Question ${s}/${allQuestions.length}`}
+        step={step}
+      />
       <Question question={currentQuestion} />
     </div>
   );

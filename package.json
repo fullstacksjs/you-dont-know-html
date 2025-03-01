@@ -30,6 +30,7 @@
   },
   "devDependencies": {
     "@fullstacksjs/eslint-config": "11.5.0",
+    "@shikijs/rehype": "3.1.0",
     "@types/node": "22.10.6",
     "@types/react": "19.0.7",
     "@types/react-dom": "19.0.3",

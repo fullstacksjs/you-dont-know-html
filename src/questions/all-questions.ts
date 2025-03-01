@@ -1,9 +1,15 @@
-import questionOne from "@/questions/01";
-import questionTwo from "@/questions/02";
-import questionThree from "@/questions/03";
+import type { Question } from "./Question";
 
-export const allQuestions = [questionOne, questionTwo, questionThree];
+import questionOne from "./01";
+import questionTwo from "./02";
+import questionThree from "./03";
+
+export const allQuestions = [
+  questionOne,
+  questionTwo,
+  questionThree,
+] satisfies Question[];
 
 export const correctAnswers = allQuestions.map(
-  (question) => question.correctAnswer,
+  (question) => question.correctAnswerId,
 );

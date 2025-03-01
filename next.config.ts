@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 
 import createMDX from "@next/mdx";
+import rehypeShiki from "@shikijs/rehype";
+
+import { fullstacksJSTheme } from "./src/lib/fullstacksjs-theme";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
@@ -14,6 +17,10 @@ const nextConfig: NextConfig = {
   },
 };
 
-const withMDX = createMDX({});
+const withMDX = createMDX({
+  options: {
+    rehypePlugins: [[rehypeShiki, { theme: fullstacksJSTheme }]],
+  },
+});
 
 export default withMDX(nextConfig);

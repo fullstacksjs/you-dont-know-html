@@ -1,15 +1,16 @@
-import codeExample from "./code-example";
-import optionOneCodeExample from "./option-one-code-example";
+import type { Question } from "../Question";
+
+import optionOneCodeExample from "./option-one-code-example.mdx";
+import Question3 from "./question.mdx";
 
 export default {
   id: 3,
-  question: "Question 3",
-  codeExample,
+  inquiry: Question3,
   options: [
-    { id: 1, text: "Second Answer 3" },
+    { id: 1, text: () => "Second Answer 3" },
     { id: 2, text: optionOneCodeExample },
-    { id: 3, text: "Second Answer 3" },
+    { id: 3, text: () => "Second Answer 3" },
   ],
-  explanation: "explanation question 3",
-  correctAnswer: 1,
-};
+  explanation: () => "explanation question 3",
+  correctAnswerId: 1,
+} satisfies Question;

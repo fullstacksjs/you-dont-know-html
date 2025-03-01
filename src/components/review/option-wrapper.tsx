@@ -1,27 +1,18 @@
-import type { ComponentType } from "react";
+import type { QuestionOption } from "@/questions/Question";
 
-import { getAnswersCount } from "@/lib/db";
-import { renderField } from "@/lib/utils";
+import { getAnswersCount, getPlayCount } from "@/lib/db";
 import { correctAnswers } from "@/questions/all-questions";
 
 import { ReviewOption } from "./review-option";
 
 interface Props {
-  option: {
-    id: number;
-    text: string | ComponentType;
-  };
+  option: QuestionOption;
   step: number;
   questionId: number;
-  playCount: number;
 }
 
-export async function OptionWrapper({
-  option,
-  step,
-  questionId,
-  playCount,
-}: Props) {
+export async function OptionWrapper({ option, step, questionId }: Props) {
+  const playCount = await getPlayCount(questionId);
   const answersCount = await getAnswersCount(questionId, option.id);
 
   const percentage = (answersCount / playCount) * 100;
@@ -35,7 +26,7 @@ export async function OptionWrapper({
         optionId={option.id}
       >
         <span className="text-white font-medium">
-          {renderField(option.text)}
+          <option.text />
         </span>
       </ReviewOption>
     </li>
