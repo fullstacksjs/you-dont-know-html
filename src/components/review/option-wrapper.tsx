@@ -34,7 +34,9 @@ export async function OptionWrapper({
         correctAnswers={correctAnswers}
         optionId={option.id}
       >
-        <span>{renderField(option.text)}</span>
+        <span className="text-white font-medium">
+          {renderField(option.text)}
+        </span>
       </ReviewOption>
     </li>
   );

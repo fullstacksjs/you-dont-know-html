@@ -31,22 +31,22 @@ export function Summary({ correctAnswers }: Props) {
         {"Feeling confident? Challenge yourself with another quiz!"}
       </p>
 
-      <div className="flex flex-col gap-2 w-full">
+      <div className="flex flex-col items-center gap-3 w-full">
         <Link
-          className="w-full py-3 bg-accent cursor-pointer text-background font-bold rounded-sm text-center"
+          className="w-1/5 py-3 text-lg bg-accent cursor-pointer text-background font-bold rounded-sm text-center"
           href={"/review"}
         >
           {"Review Choices"}
         </Link>
         <button
-          className="w-full py-3 text-accent cursor-pointer bg-black/20 font-bold rounded-sm"
+          className="w-1/5 py-3 text-lg text-accent cursor-pointer bg-black/20 font-bold rounded-sm"
           type="button"
           onClick={share}
         >
           {"Share"}
         </button>
         <Link
-          className="w-full py-3 text-accent cursor-pointer bg-black/20 font-bold rounded-sm text-center"
+          className="w-1/5 py-3 text-lg text-accent cursor-pointer bg-black/20 font-bold rounded-sm text-center"
           href={"/"}
         >
           {"Start Over"}

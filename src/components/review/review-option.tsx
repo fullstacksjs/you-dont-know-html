@@ -50,11 +50,11 @@ export function ReviewOption({
             : isWrongAnswered
               ? "#ca343e"
               : "#585858",
-          opacity: 0.5,
+          opacity: "20%",
           position: "absolute",
           left: 0,
           top: 0,
-          zIndex: 1,
+          zIndex: 3,
           borderTopLeftRadius: "8px",
           borderBottomLeftRadius: "8px",
         }}
@@ -68,7 +68,7 @@ export function ReviewOption({
         }}
       >
         {children}
-        <span>{percentage}</span>
+        <span>{Math.round(percentage)}%</span>
       </div>
     </div>
   );
