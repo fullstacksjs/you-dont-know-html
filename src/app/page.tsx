@@ -8,8 +8,6 @@ export default function HomePage() {
           {"YOU DON’T KNOW "}
           <span className="text-accent block">{"HTML"}</span>
         </h2>
-      </div>
-      <div className="flex flex-col justify-end">
         <RestartButton />
       </div>
     </main>
