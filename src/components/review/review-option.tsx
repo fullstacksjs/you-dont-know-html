@@ -1,7 +1,7 @@
 "use client";
 import type { ReactNode } from "react";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/cn";
 import { useIsClient, useSessionStorage } from "usehooks-ts";
 
 interface Props {

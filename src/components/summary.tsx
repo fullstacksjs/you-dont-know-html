@@ -1,16 +1,7 @@
 "use client";
 import { Link } from "next-view-transitions";
-import dynamic from "next/dynamic";
 
-const SummaryResult = dynamic(
-  () => import("./summary-result").then((m) => m.SummaryResult),
-  {
-    ssr: false,
-    loading: () => (
-      <h2 className="text-white text-3xl font-bold text-center">{`Calculating result...`}</h2>
-    ),
-  },
-);
+import { SummaryResult } from "./summary-result";
 
 interface Props {
   correctAnswers: number[];
@@ -22,10 +13,7 @@ export function Summary({ correctAnswers }: Props) {
   };
 
   return (
-    <main
-      className="flex flex-col gap-6 justify-center items-center h-[100dvh] px-3
-"
-    >
+    <main className="flex flex-col gap-6 justify-center items-center h-[100dvh] px-3">
       <SummaryResult correctAnswers={correctAnswers} />
       <p className="text-lg">
         {"Feeling confident? Challenge yourself with another quiz!"}

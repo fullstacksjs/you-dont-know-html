@@ -1,4 +1,4 @@
-import { RestartButton } from "./RestartButton";
+import { RestartButton } from "./restart-button";
 
 export function Welcome() {
   return (

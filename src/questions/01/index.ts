@@ -1,14 +1,15 @@
+import type { Question } from "../Question";
+
 import explanation from "./explanation.mdx";
 
 export default {
   id: 1,
-  question: "What does HTML stand for?",
-  codeExample: "",
+  inquiry: () => "What does HTML stand for?",
   options: [
-    { id: 1, text: "Hyper Text Markup Language" },
-    { id: 2, text: "Hyperlinks and Text Markup Language" },
-    { id: 3, text: "Home Tool Markup Language" },
+    { id: 1, text: () => "Hyper Text Markup Language" },
+    { id: 2, text: () => "Hyperlinks and Text Markup Language" },
+    { id: 3, text: () => "Home Tool Markup Language" },
   ],
   explanation,
-  correctAnswer: 1,
-};
+  correctAnswerId: 1,
+} satisfies Question;

@@ -1,6 +1,7 @@
 import type { ThemeRegistrationAny } from "shiki";
 
-export const customTheme: ThemeRegistrationAny = {
+/* cspell:disable */
+export const fullstacksJSTheme: ThemeRegistrationAny = {
   name: "S-Kill",
   type: "dark",
   semanticHighlighting: true,
@@ -1820,8 +1821,8 @@ export const customTheme: ThemeRegistrationAny = {
     },
   ],
   colors: {
-    foreground: "#ffffff",
-    focusBorder: "#00000000",
+    "foreground": "#ffffff",
+    "focusBorder": "#00000000",
     "selection.background": "#ffd86e",
     "scrollbar.shadow": "#00000000",
     "activityBar.foreground": "#ffffff",
