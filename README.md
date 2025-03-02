@@ -1,6 +1,6 @@
 <div align="center">
 
-![banner](https://raw.githubusercontent.com/fullstacksjs/yout-dont-know-html/main/assets/banner.png)
+![banner](https://github.com/fullstacksjs/you-dont-know-html/blob/main/assets/banner-dark.png?raw=true)
 
 <br/>
 
