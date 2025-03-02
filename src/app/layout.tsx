@@ -20,6 +20,7 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
       <html lang="en">
         <body
           className={`${rajdhaniSans.className} bg-background text-foreground antialiased`}
+          suppressHydrationWarning
         >
           {children}
         </body>
