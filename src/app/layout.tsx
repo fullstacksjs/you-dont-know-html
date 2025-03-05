@@ -1,7 +1,8 @@
-import "./globals.css";
-
 import type { Metadata } from "next";
 
+import "./globals.css";
+
+import ProgressBarProvider from "@/lib/progressbar-provider";
 // TODO: Migrate to first class support.
 import { ViewTransitions } from "next-view-transitions";
 import { Fira_Mono, Rajdhani } from "next/font/google";
@@ -28,7 +29,7 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
           className={`${rajdhaniSans.className} ${firaMono.variable} bg-background text-foreground antialiased`}
           suppressHydrationWarning
         >
-          {children}
+          <ProgressBarProvider>{children}</ProgressBarProvider>
         </body>
       </html>
     </ViewTransitions>
