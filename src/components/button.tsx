@@ -5,7 +5,7 @@ export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
   className?: string;
-  variant?: "contained" | "outline";
+  variant?: "contained" | "secondary";
   size?: "md" | "sm";
   asChild?: boolean;
 }
@@ -25,7 +25,8 @@ export const Button = ({
         "w-full cursor-pointer",
         {
           "bg-accent text-background ": variant === "contained",
-          "py-6 text-center font-bold text-xl rounded-md": size === "md",
+          "bg-shade-2 text-accent": variant === "secondary",
+          "py-2.5 text-center font-bold text-xl rounded-md": size === "md",
         },
         className,
       )}

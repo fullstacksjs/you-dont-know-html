@@ -11,7 +11,7 @@ export function Previews({ step, getHref, getLabel }: Props) {
   return (
     <Link
       className="text-muted1 p-2 rounded-lg flex items-center gap-3 cursor-pointer mb-2"
-      href={getHref(step)}
+      href={getHref(step - 1)}
     >
       <PreviewsIcon />
       <span className="text-muted1 font-bold">{getLabel(step)}</span>

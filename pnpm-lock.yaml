@@ -22,6 +22,9 @@ importers:
       "@radix-ui/react-slot":
         specifier: 1.1.2
         version: 1.1.2(@types/react@19.0.10)(react@19.0.0)
+      "@shikijs/transformers":
+        specifier: 3.1.0
+        version: 3.1.0
       "@tailwindcss/postcss":
         specifier: 4.0.9
         version: 4.0.9
@@ -31,6 +34,9 @@ importers:
       clsx:
         specifier: 2.1.1
         version: 2.1.1
+      hast-util-to-jsx-runtime:
+        specifier: 2.3.5
+        version: 2.3.5
       next:
         specifier: 15.2.0-canary.39
         version: 15.2.0-canary.39(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -1352,6 +1358,12 @@ packages:
     resolution:
       {
         integrity: sha512-A4MJmy9+ydLNbNCtkmdTp8a+ON+MMXoUe1KTkELkyu0+pHGOcbouhNuobhZoK59cL4cOST6CCz1x+kUdkp9UZA==,
+      }
+
+  "@shikijs/transformers@3.1.0":
+    resolution:
+      {
+        integrity: sha512-Et+agcilvJOmWh/goUczrdM6R35JrEr8B8xZxJVv6rCIpUo2rICtWZF4YBUIILx5mV78455EcYyFPCrk3lJ+nw==,
       }
 
   "@shikijs/types@3.1.0":
@@ -5907,6 +5919,11 @@ snapshots:
 
   "@shikijs/themes@3.1.0":
     dependencies:
+      "@shikijs/types": 3.1.0
+
+  "@shikijs/transformers@3.1.0":
+    dependencies:
+      "@shikijs/core": 3.1.0
       "@shikijs/types": 3.1.0
 
   "@shikijs/types@3.1.0":

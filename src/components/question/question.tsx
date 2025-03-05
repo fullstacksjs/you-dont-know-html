@@ -11,14 +11,10 @@ interface Props {
 export function Question({ question }: Props) {
   return (
     <section>
-      <div>
-        <h3 className="text-lg font-bold text-white">
-          <question.inquiry />
-        </h3>
+      <div className="question text-question">
+        <question.inquiry />
       </div>
-      <div className="m-5 flex justify-center">
-        <hr className="w-full border text-black opacity-20" />
-      </div>
+      <hr className="w-full my-5 text-shade-2" />
       <ul className="flex flex-col gap-2">
         {question.options.map((option) => (
           <li key={`${question.id}-${option.id}`}>
@@ -27,9 +23,9 @@ export function Question({ question }: Props) {
               name={`question-${question.id}-option-${option.id}`}
               totalNumber={allQuestions.length}
             >
-              <span>
+              <div>
                 <option.text />
-              </span>
+              </div>
             </QuestionOption>
           </li>
         ))}

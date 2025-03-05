@@ -1,3 +1,4 @@
+"use client";
 import { SummaryStore } from "@/components/summary-store";
 import { redirect } from "next/navigation";
 import { useSessionStorage } from "usehooks-ts";

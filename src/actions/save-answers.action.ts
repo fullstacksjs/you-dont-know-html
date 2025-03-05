@@ -9,7 +9,7 @@ export async function saveAnswers(answerIds: number[]) {
   const answers = allQuestions.map<AnswerDto>((question, index) => {
     return {
       questionId: question.id,
-      answerId: answerIds[index],
+      answerId: answerIds[index]!,
       correct: question.correctAnswerId === answerIds[index],
     };
   });

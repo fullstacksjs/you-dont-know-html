@@ -11,7 +11,8 @@
     "supabase",
     "usehooks",
     "evenodd",
-    "dont"
+    "dont",
+    "jsxs"
   ],
   "ignorePaths": ["pnpm-lock.yaml", ".github/**"]
 }

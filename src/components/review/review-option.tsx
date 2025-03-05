@@ -33,7 +33,7 @@ export function ReviewOption({
   return (
     <div
       className={cn(
-        "flex w-full items-center gap-3 rounded-lg border border-black p-3 has-checked:text-accent relative",
+        "flex w-full items-center gap-3 rounded-md border border-border-dark p-3 has-checked:text-accent relative",
         {
           "border-success": isCorrectOption,
           "border-error": isWrongAnswered,
@@ -42,32 +42,15 @@ export function ReviewOption({
       )}
     >
       <div
-        style={{
-          width: `${percentage}%`,
-          height: "100%",
-          background: isCorrectOption
-            ? "#00a16e"
-            : isWrongAnswered
-              ? "#ca343e"
-              : "#585858",
-          opacity: "20%",
-          position: "absolute",
-          left: 0,
-          top: 0,
-          zIndex: 3,
-          borderTopLeftRadius: "8px",
-          borderBottomLeftRadius: "8px",
-        }}
+        style={{ width: `${percentage}%` }}
+        className={cn("absolute opacity-20 h-full left-0 top-0", {
+          "bg-success": isCorrectOption,
+          "bg-error": isWrongAnswered,
+          "bg-muted2": !isCorrectOption && !isWrongAnswered,
+        })}
       />
-      <div
-        style={{
-          zIndex: 2,
-          display: "flex",
-          justifyContent: "space-between",
-          width: "100%",
-        }}
-      >
-        {children}
+      <div className="flex items-center w-full">
+        <span className="flex-1">{children}</span>
         <span>{Math.round(percentage)}%</span>
       </div>
     </div>

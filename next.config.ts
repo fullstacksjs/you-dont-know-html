@@ -2,6 +2,7 @@ import type { NextConfig } from "next";
 
 import createMDX from "@next/mdx";
 import rehypeShiki from "@shikijs/rehype";
+import { transformerRenderWhitespace } from "@shikijs/transformers";
 
 import { fullstacksJSTheme } from "./src/lib/fullstacksjs-theme";
 
@@ -16,7 +17,17 @@ const nextConfig: NextConfig = {
 };
 
 const withMDX = createMDX({
-  options: { rehypePlugins: [[rehypeShiki, { theme: fullstacksJSTheme }]] },
+  options: {
+    rehypePlugins: [
+      [
+        rehypeShiki,
+        {
+          theme: fullstacksJSTheme,
+          transformers: [transformerRenderWhitespace({ position: "boundary" })],
+        },
+      ],
+    ],
+  },
 });
 
 export default withMDX(nextConfig);

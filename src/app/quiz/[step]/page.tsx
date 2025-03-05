@@ -14,17 +14,14 @@ interface Props {
 export default async function QuizPage({ params }: Props) {
   const step = Number((await params).step);
   const currentStep = step - 1;
-
-  if (Number.isNaN(step) || step > allQuestions.length || step < 0) {
-    return notFound();
-  }
-
   const currentQuestion = allQuestions[currentStep];
+
+  if (!currentQuestion) return notFound();
 
   return (
     <div className="p-4 md:px-0 w-full md:w-1/2">
       <Previews
-        getHref={(s) => `/quiz/${s}`}
+        getHref={(s) => (s === 0 ? "#" : `/quiz/${s}`)}
         getLabel={(s) => `Question ${s}/${allQuestions.length}`}
         step={step}
       />

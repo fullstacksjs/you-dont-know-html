@@ -37,18 +37,23 @@ export function QuestionOption({ name, children, id, totalNumber }: Props) {
     nextStep();
   };
 
+  const isAnswered = currentAnswer != null;
+
   return (
     <label
-      className="flex w-full items-center gap-3 rounded-lg border border-black p-3 cursor-pointer has-checked:text-accent"
+      className="flex w-full items-center gap-3 rounded-lg border border-border-dark p-3 cursor-pointer has-checked:text-accent has-checked:bg-shade-2"
       htmlFor={name}
     >
-      <input
-        checked={currentAnswer ? id === currentAnswer : false}
-        className="appearance-none w-5 h-5 cursor-pointer rounded-full border-2 border-white checked:bg-accent checked:border-accent checked:shadow-radio-ring"
-        id={name}
-        type="radio"
-        onChange={answerQuestion}
-      />
+      <div className="size-[26px] cursor-pointer rounded-full border-2 border-foreground grid justify-center items-center has-checked:border-accent">
+        <input
+          checked={isAnswered && id === currentAnswer}
+          className="hidden peer"
+          id={name}
+          type="radio"
+          onClick={answerQuestion}
+        />
+        <div className="hidden size-[14px] rounded-full bg-accent peer-checked:block"></div>
+      </div>
       {children}
     </label>
   );

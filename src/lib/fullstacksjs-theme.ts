@@ -1369,7 +1369,7 @@ export const fullstacksJSTheme: ThemeRegistrationAny = {
     "inputOption.activeForeground": "#ffd86e",
     "input.placeholderForeground": "#ffffff55",
     "textLink.foreground": "#ffd86e",
-    "editor.background": "#23252e",
+    "editor.background": "#ffffff00",
     "editor.foreground": "#ffffff",
     "editorLineNumber.foreground": "#ffffff33",
     "editorCursor.foreground": "#ffffff",

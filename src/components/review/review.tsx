@@ -10,15 +10,11 @@ interface Props {
 export function Review({ question, step }: Props) {
   return (
     <section>
-      <div>
-        <h3 className="text-lg font-bold text-white">
-          <question.inquiry />
-        </h3>
+      <div className="question text-question">
+        <question.inquiry />
       </div>
-      <div className="m-3 flex justify-center">
-        <hr className="w-full border text-black opacity-20" />
-      </div>
-      <ul className="flex flex-col gap-2">
+      <hr className="text-border-dark my-6" />
+      <ul className="flex flex-col gap-4">
         {question.options.map((option) => (
           <OptionWrapper
             key={`${question.id}-${option.id}`}
