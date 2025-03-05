@@ -1,6 +1,7 @@
 "use client";
 import type { ReactNode } from "react";
 
+import { useProgress } from "@bprogress/next";
 import { useTransitionRouter } from "next-view-transitions";
 import { useParams } from "next/navigation";
 import { useSessionStorage } from "usehooks-ts";
@@ -14,6 +15,7 @@ interface Props {
 
 export function QuestionOption({ name, children, id, totalNumber }: Props) {
   const router = useTransitionRouter();
+  const { start } = useProgress();
   const step = Number(useParams().step);
   const currentStep = step - 1;
   const [answers, setAnswers] = useSessionStorage<number[]>("answers", []);
@@ -21,10 +23,10 @@ export function QuestionOption({ name, children, id, totalNumber }: Props) {
   const currentAnswer = answers[currentStep];
 
   const nextStep = () => {
+    start();
     if (step === totalNumber) {
       return router.push("/summary");
     }
-
     return router.push(`/quiz/${step + 1}`);
   };
 

@@ -12,6 +12,7 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@bprogress/next": "3.2.4",
     "@mdx-js/loader": "3.1.0",
     "@mdx-js/react": "3.1.0",
     "@next/mdx": "15.2.0",

@@ -5,14 +5,15 @@
   "ignoreRegExpList": ["/[\\u0621-\\u064A]+/"],
   "words": [
     "autoincrement",
+    "bprogress",
+    "dont",
+    "evenodd",
     "fullstacksjs",
+    "jsxs",
     "shiki",
     "shikijs",
     "supabase",
-    "usehooks",
-    "evenodd",
-    "dont",
-    "jsxs"
+    "usehooks"
   ],
   "ignorePaths": ["pnpm-lock.yaml", ".github/**"]
 }

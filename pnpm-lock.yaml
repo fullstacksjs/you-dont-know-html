@@ -7,6 +7,9 @@ settings:
 importers:
   .:
     dependencies:
+      "@bprogress/next":
+        specifier: 3.2.4
+        version: 3.2.4(next@15.2.0-canary.39(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       "@mdx-js/loader":
         specifier: 3.1.0
         version: 3.1.0(acorn@8.14.0)
@@ -109,6 +112,31 @@ packages:
         integrity: sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==,
       }
     engines: { node: ">=10" }
+
+  "@bprogress/core@1.2.3":
+    resolution:
+      {
+        integrity: sha512-RMdZtsbXB2IeygoyUo+eYXCyvnAB82JzmJgZXnS1B38hTnwzcveyiifLYa6VQvqaUkLNGns5tCCJFv+Qld5r4A==,
+      }
+
+  "@bprogress/next@3.2.4":
+    resolution:
+      {
+        integrity: sha512-s3ScGO/OVedphwwvwRpILRg5kWjjQG3M42TeJZOyD/QPSqzyCO+5WEjvjjdtT2qHafDBeq351e446vbcLq6vYw==,
+      }
+    peerDependencies:
+      next: ">=13.0.0"
+      react: ">=18.0.0"
+      react-dom: ">=18.0.0"
+
+  "@bprogress/react@1.1.8":
+    resolution:
+      {
+        integrity: sha512-D2JOO45IWCnVxvIkCpNx2Qmrn7QtX3UIIaybOF763fezeD2YMDdk9zWx9Q6k+3XbJRbTo01n0coDDgBBNqDSaA==,
+      }
+    peerDependencies:
+      react: ">=18.0.0"
+      react-dom: ">=18.0.0"
 
   "@cspell/cspell-bundled-dicts@8.17.5":
     resolution:
@@ -5195,6 +5223,22 @@ packages:
 
 snapshots:
   "@alloc/quick-lru@5.2.0": {}
+
+  "@bprogress/core@1.2.3": {}
+
+  "@bprogress/next@3.2.4(next@15.2.0-canary.39(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)":
+    dependencies:
+      "@bprogress/core": 1.2.3
+      "@bprogress/react": 1.1.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      next: 15.2.0-canary.39(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      react: 19.0.0
+      react-dom: 19.0.0(react@19.0.0)
+
+  "@bprogress/react@1.1.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)":
+    dependencies:
+      "@bprogress/core": 1.2.3
+      react: 19.0.0
+      react-dom: 19.0.0(react@19.0.0)
 
   "@cspell/cspell-bundled-dicts@8.17.5":
     dependencies:
