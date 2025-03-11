@@ -1,5 +1,5 @@
 import { PreviewsIcon } from "@/components/previews-icon";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 
 interface Props {
   step: number;

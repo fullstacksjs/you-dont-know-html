@@ -1,5 +1,6 @@
 import { Previews } from "@/components/question/previews";
 import { Question } from "@/components/question/question";
+import { QuestionProgressbar } from "@/components/question/question-progressbar";
 import { allQuestions } from "@/questions/all-questions";
 import { notFound } from "next/navigation";
 
@@ -21,10 +22,11 @@ export default async function QuizPage({ params }: Props) {
   return (
     <div className="p-4 md:px-0 w-full md:w-1/2">
       <Previews
-        getHref={(s) => (s === 0 ? "#" : `/quiz/${s}`)}
+        getHref={(s) => (s === 0 ? "/" : `/quiz/${s}`)}
         getLabel={(s) => `Question ${s}/${allQuestions.length}`}
         step={step}
       />
+      <QuestionProgressbar currentStep={currentStep} />
       <Question question={currentQuestion} />
     </div>
   );
