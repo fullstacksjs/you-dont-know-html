@@ -44,7 +44,7 @@ export function QuestionOption({ name, children, id, totalNumber }: Props) {
       className="flex w-full items-center gap-3 rounded-lg border border-border-dark p-3 cursor-pointer has-checked:text-accent has-checked:bg-shade-2"
       htmlFor={name}
     >
-      <div className="size-[26px] cursor-pointer rounded-full border-2 border-foreground grid justify-center items-center has-checked:border-accent">
+      <div className="size-[26px] shrink-0 cursor-pointer rounded-full border-2 border-foreground grid justify-center items-center has-checked:border-accent">
         <input
           checked={isAnswered && id === currentAnswer}
           className="hidden peer"
@@ -54,7 +54,7 @@ export function QuestionOption({ name, children, id, totalNumber }: Props) {
         />
         <div className="hidden size-[14px] rounded-full bg-accent peer-checked:block"></div>
       </div>
-      {children}
+      <div className="overflow-x-auto">{children}</div>
     </label>
   );
 }
