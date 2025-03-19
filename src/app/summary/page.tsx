@@ -1,6 +1,6 @@
 import { Button } from "@/components/button";
 import { SummaryResult } from "@/components/summary-result";
-import { correctAnswers } from "@/questions/all-questions";
+import { correctAnswers } from "@/questions/questions";
 import { Link } from "next-view-transitions";
 
 export default function SummaryPage() {

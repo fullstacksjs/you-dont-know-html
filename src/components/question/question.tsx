@@ -1,6 +1,6 @@
 import type { Question } from "@/questions/Question";
 
-import { allQuestions } from "@/questions/all-questions";
+import { questions } from "@/questions/questions";
 
 import { QuestionOption } from "./question-option";
 
@@ -21,7 +21,7 @@ export function Question({ question }: Props) {
             <QuestionOption
               id={option.id}
               name={`question-${question.id}-option-${option.id}`}
-              totalNumber={allQuestions.length}
+              totalNumber={questions.length}
             >
               <div>
                 <option.text />

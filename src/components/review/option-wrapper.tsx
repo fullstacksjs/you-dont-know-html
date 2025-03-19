@@ -1,7 +1,7 @@
 import type { QuestionOption } from "@/questions/Question";
 
 import { getAnswersCount, getGamesCount } from "@/lib/db";
-import { correctAnswers } from "@/questions/all-questions";
+import { correctAnswers } from "@/questions/questions";
 
 import { ReviewOption } from "./review-option";
 

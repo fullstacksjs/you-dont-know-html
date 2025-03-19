@@ -1,6 +1,6 @@
 import { Previews } from "@/components/question/previews";
 import { Review } from "@/components/review/review";
-import { allQuestions } from "@/questions/all-questions";
+import { questions } from "@/questions/questions";
 
 export default function ReviewPage() {
   return (
@@ -11,7 +11,7 @@ export default function ReviewPage() {
           getLabel={() => "Reviews"}
           step={1}
         />
-        {allQuestions.map((question, index) => (
+        {questions.map((question, index) => (
           <div className="mb-14" key={question.id}>
             <Review step={index + 1} question={question} />
           </div>

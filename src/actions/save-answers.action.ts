@@ -3,10 +3,10 @@
 import type { AnswerDto } from "@/lib/db";
 
 import { createGame } from "@/lib/db";
-import { allQuestions } from "@/questions/all-questions";
+import { questions } from "@/questions/questions";
 
 export async function saveAnswers(answerIds: number[]) {
-  const answers = allQuestions.map<AnswerDto>((question, index) => {
+  const answers = questions.map<AnswerDto>((question, index) => {
     return {
       questionId: question.id,
       answerId: answerIds[index]!,
