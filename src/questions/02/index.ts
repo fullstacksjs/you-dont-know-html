@@ -6,9 +6,10 @@ export default {
   id: 2,
   inquiry: question,
   options: [
-    { id: 1, text: () => "Answer" },
-    { id: 2, text: () => "Long answer so it should wrap to the next line" },
-    { id: 3, text: () => "I don’t know" },
+    { id: 1, text: () => "red" },
+    { id: 2, text: () => "blue" },
+    { id: 3, text: () => "white" },
+    { id: 4, text: () => "I don’t know" },
   ],
   explanation: () => "explanation question 2",
   correctAnswerId: 1,
