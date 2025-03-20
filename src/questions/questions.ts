@@ -9,7 +9,3 @@ export const questions = [
   questionTwo,
   questionThree,
 ] satisfies Question[];
-
-export const correctAnswers = questions.map(
-  (question) => question.correctAnswerId,
-);

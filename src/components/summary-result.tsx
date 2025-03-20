@@ -1,31 +1,26 @@
 "use client";
-import { SummaryStore } from "@/components/summary-store";
+import { saveAnswers } from "@/actions/save-answers.action";
+import { questions } from "@/questions/questions";
+import { isNullOrEmptyArray } from "@fullstacksjs/toolbox";
 import { redirect } from "next/navigation";
+import { useEffect } from "react";
 import { useSessionStorage } from "usehooks-ts";
 
-interface Props {
-  correctAnswers: number[];
-}
-
-export function SummaryResult({ correctAnswers }: Props) {
+export function SummaryResult() {
   const [answers] = useSessionStorage<number[]>("answers", []);
 
-  const result = correctAnswers.reduce(
-    (previousValue, currentValue, currentIndex) => {
-      if (answers[currentIndex] === currentValue) return previousValue + 1;
-      return previousValue;
-    },
-    0,
+  const correctAnswers = questions.filter(
+    (question, index) => answers[index] === question.correctAnswerId,
   );
 
-  if (!answers.length) {
-    return redirect("/");
-  }
+  useEffect(() => {
+    if (isNullOrEmptyArray(answers)) return;
+    void saveAnswers(answers);
+  }, [answers]);
+
+  if (isNullOrEmptyArray(answers)) return redirect("/");
 
   return (
-    <>
-      <SummaryStore answers={answers} />
-      <h2 className="text-white text-3xl font-bold text-center">{`You got ${result} out of ${correctAnswers.length} correct!`}</h2>
-    </>
+    <h2 className="text-white text-3xl font-bold text-center">{`You got ${correctAnswers.length} out of ${questions.length} correct!`}</h2>
   );
 }
