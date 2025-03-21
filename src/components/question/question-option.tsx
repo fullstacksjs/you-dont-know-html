@@ -1,43 +1,33 @@
 "use client";
+import type { UserAnswers } from "@/state/useAnswers";
 import type { ReactNode } from "react";
 
-import { useTransitionRouter } from "next-view-transitions";
-import { useParams } from "next/navigation";
-import { useSessionStorage } from "usehooks-ts";
+import { useStoreAnswer, useUserAnswers } from "@/state/useAnswers";
 
 interface Props {
   name: string;
   children: ReactNode;
   id: number;
-  totalNumber: number;
+  onSelect?: (id: number, answers: UserAnswers) => void;
+  questionId: number;
 }
 
-export function QuestionOption({ name, children, id, totalNumber }: Props) {
-  const router = useTransitionRouter();
-  const step = Number(useParams().step);
-  const currentStep = step - 1;
-  const [answers, setAnswers] = useSessionStorage<number[]>("answers", []);
+export function QuestionOption({
+  name,
+  children,
+  questionId,
+  id,
+  onSelect,
+}: Props) {
+  const userAnswers = useUserAnswers();
+  const answerQuestion = useStoreAnswer(questionId);
+  const userAnswer = userAnswers[questionId];
+  const isAnswered = userAnswer != null;
 
-  const currentAnswer = answers[currentStep];
-
-  const nextStep = () => {
-    if (step === totalNumber) {
-      return router.push("/summary");
-    }
-
-    return router.push(`/quiz/${step + 1}`);
+  const handleSelect = () => {
+    answerQuestion(id);
+    onSelect?.(id, userAnswers);
   };
-
-  const answerQuestion = () => {
-    setAnswers((prevAnswers) => {
-      const newAnswers = [...prevAnswers];
-      newAnswers[currentStep] = id;
-      return newAnswers;
-    });
-    nextStep();
-  };
-
-  const isAnswered = currentAnswer != null;
 
   return (
     <label
@@ -46,11 +36,11 @@ export function QuestionOption({ name, children, id, totalNumber }: Props) {
     >
       <div className="size-[26px] shrink-0 cursor-pointer rounded-full border-2 border-foreground grid justify-center items-center has-checked:border-accent">
         <input
-          checked={isAnswered && id === currentAnswer}
+          checked={isAnswered && id === userAnswer}
           className="hidden peer"
           id={name}
           type="radio"
-          onClick={answerQuestion}
+          onClick={handleSelect}
         />
         <div className="hidden size-[14px] rounded-full bg-accent peer-checked:block"></div>
       </div>

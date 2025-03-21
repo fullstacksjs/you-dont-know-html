@@ -7,6 +7,9 @@ settings:
 importers:
   .:
     dependencies:
+      "@fullstacksjs/toolbox":
+        specifier: 4.16.0
+        version: 4.16.0
       "@mdx-js/loader":
         specifier: 3.1.0
         version: 3.1.0(acorn@8.14.0)
@@ -898,6 +901,13 @@ packages:
         optional: true
       typescript:
         optional: true
+
+  "@fullstacksjs/toolbox@4.16.0":
+    resolution:
+      {
+        integrity: sha512-vf1RZeBzs3FW4YanmOygH4/PUmYxvzUQGgO/rraEVg+uwrDl8zfcSct9YaS7tg8GF6hUM30DErwZc6izj02UYg==,
+      }
+    engines: { node: ">=16" }
 
   "@humanfs/core@0.19.1":
     resolution:
@@ -5660,6 +5670,8 @@ snapshots:
       - tailwindcss
       - ts-api-utils
       - vitest
+
+  "@fullstacksjs/toolbox@4.16.0": {}
 
   "@humanfs/core@0.19.1": {}
 

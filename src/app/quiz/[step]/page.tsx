@@ -1,8 +1,11 @@
+import type { AnswerEvent } from "@/components/question/question";
+
+import { saveUserAnswers } from "@/actions/save-answers.action";
 import { Previews } from "@/components/question/previews";
 import { Question } from "@/components/question/question";
 import { QuestionProgressbar } from "@/components/question/question-progressbar";
 import { questions } from "@/questions/questions";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 
 export function generateStaticParams() {
   return questions.map((_, index) => ({ step: String(index + 1) }));
@@ -19,6 +22,16 @@ export default async function QuizPage({ params }: Props) {
 
   if (!currentQuestion) return notFound();
 
+  const handleAnswer = async ({ userAnswers }: AnswerEvent) => {
+    "use server";
+    if (step === questions.length) {
+      await saveUserAnswers(userAnswers);
+      redirect("/summary");
+    }
+
+    redirect(`/quiz/${step + 1}`);
+  };
+
   return (
     <div className="p-4 md:px-0 w-full md:w-1/2">
       <Previews
@@ -27,7 +40,7 @@ export default async function QuizPage({ params }: Props) {
         step={step}
       />
       <QuestionProgressbar currentStep={currentStep} />
-      <Question question={currentQuestion} />
+      <Question onAnswer={handleAnswer} question={currentQuestion} />
     </div>
   );
 }

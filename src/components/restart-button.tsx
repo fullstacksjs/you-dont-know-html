@@ -1,13 +1,13 @@
 "use client";
 
 import { cn } from "@/lib/cn";
+import { useResetUserAnswers } from "@/state/useAnswers";
 import Link from "next/link";
-import { useSessionStorage } from "usehooks-ts";
 
 import { Button } from "./button";
 
 export const RestartButton = ({ className }: { className?: string }) => {
-  const [, , remove] = useSessionStorage("answers", []);
+  const remove = useResetUserAnswers();
 
   return (
     <Button asChild className={cn("mx-auto", className)}>

@@ -1,19 +1,21 @@
 "use server";
 
 import type { AnswerDto } from "@/lib/db";
+import type { UserAnswers } from "@/state/useAnswers";
 
 import { createGame } from "@/lib/db";
 import { questions } from "@/questions/questions";
 
-export async function saveAnswers(answerIds: number[]) {
-  const answers = questions.map<AnswerDto>((question, index) => {
-    return {
-      questionId: question.id,
-      answerId: answerIds[index]!,
-      correct: question.correctAnswerId === answerIds[index],
-    };
-  });
-
+export async function saveUserAnswers(userAnswers: UserAnswers) {
+  const answers = Object.entries(userAnswers).map<AnswerDto>(
+    ([questionId, answerId]) => ({
+      questionId: Number(questionId),
+      answerId,
+      correct:
+        questions.find((q) => q.id === Number(questionId))?.correctAnswerId ===
+        answerId,
+    }),
+  );
   const response = await createGame(answers);
 
   return response;

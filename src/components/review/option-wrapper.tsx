@@ -1,7 +1,6 @@
 import type { QuestionOption } from "@/questions/Question";
 
 import { getAnswersCount, getGamesCount } from "@/lib/db";
-import { correctAnswers } from "@/questions/questions";
 
 import { ReviewOption } from "./review-option";
 
@@ -19,12 +18,7 @@ export async function OptionWrapper({ option, step, questionId }: Props) {
 
   return (
     <li>
-      <ReviewOption
-        percentage={percentage}
-        step={step}
-        correctAnswers={correctAnswers}
-        optionId={option.id}
-      >
+      <ReviewOption percentage={percentage} step={step} optionId={option.id}>
         <span className="text-white font-medium">
           <option.text />
         </span>

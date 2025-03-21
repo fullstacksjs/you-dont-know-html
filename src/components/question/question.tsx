@@ -1,14 +1,25 @@
 import type { Question } from "@/questions/Question";
-
-import { questions } from "@/questions/questions";
+import type { UserAnswers } from "@/state/useAnswers";
 
 import { QuestionOption } from "./question-option";
 
-interface Props {
-  question: Question;
+export interface AnswerEvent {
+  questionId: number;
+  optionId: number;
+  userAnswers: UserAnswers;
 }
 
-export function Question({ question }: Props) {
+interface Props {
+  question: Question;
+  onAnswer: (e: AnswerEvent) => Promise<void>;
+}
+
+export function Question({ question, onAnswer }: Props) {
+  const handleSelect = async (optionId: number, userAnswers: UserAnswers) => {
+    "use server";
+    await onAnswer({ questionId: question.id, optionId, userAnswers });
+  };
+
   return (
     <section>
       <div className="question text-question">
@@ -21,7 +32,8 @@ export function Question({ question }: Props) {
             <QuestionOption
               id={option.id}
               name={`question-${question.id}-option-${option.id}`}
-              totalNumber={questions.length}
+              onSelect={handleSelect}
+              questionId={question.id}
             >
               <div>
                 <option.text />

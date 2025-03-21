@@ -2,33 +2,31 @@
 import type { ReactNode } from "react";
 
 import { cn } from "@/lib/cn";
-import { useIsClient, useSessionStorage } from "usehooks-ts";
+import { questions } from "@/questions/questions";
+import { useUserAnswers } from "@/state/useAnswers";
+import { useIsClient } from "usehooks-ts";
 
 interface Props {
   children: ReactNode;
-  correctAnswers: number[];
   optionId: number;
   step: number;
   percentage: number;
 }
 
-export function ReviewOption({
-  children,
-  correctAnswers,
-  optionId,
-  step,
-  percentage,
-}: Props) {
+export function ReviewOption({ children, optionId, step, percentage }: Props) {
   const currentStep = step - 1;
-  const [answers] = useSessionStorage<number[]>("answers", []);
+  const answers = useUserAnswers();
   const isClient = useIsClient();
 
-  const answer = answers[currentStep];
-  const correctAnswer = correctAnswers[currentStep];
-  const isCorrect = correctAnswer === answer;
+  const userAnswer = answers[currentStep];
+  const correctAnswerId = questions.find(
+    (q) => q.id === currentStep,
+  )?.correctAnswerId;
 
-  const isCorrectOption = optionId === correctAnswer;
-  const isWrongAnswered = isClient && !isCorrect && answer === optionId;
+  const isUserAnswerCorrect = correctAnswerId === userAnswer;
+  const isCorrectOption = optionId === correctAnswerId;
+  const isWrongAnswered =
+    isClient && !isUserAnswerCorrect && userAnswer === optionId;
 
   return (
     <div

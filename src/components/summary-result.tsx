@@ -1,31 +1,19 @@
 "use client";
-import { SummaryStore } from "@/components/summary-store";
+import { questions } from "@/questions/questions";
+import { useUserAnswers } from "@/state/useAnswers";
+import { isEmptyObject } from "@fullstacksjs/toolbox";
 import { redirect } from "next/navigation";
-import { useSessionStorage } from "usehooks-ts";
 
-interface Props {
-  correctAnswers: number[];
-}
+export function SummaryResult() {
+  const answers = useUserAnswers();
 
-export function SummaryResult({ correctAnswers }: Props) {
-  const [answers] = useSessionStorage<number[]>("answers", []);
-
-  const result = correctAnswers.reduce(
-    (previousValue, currentValue, currentIndex) => {
-      if (answers[currentIndex] === currentValue) return previousValue + 1;
-      return previousValue;
-    },
-    0,
+  const correctAnswers = questions.filter(
+    (question, index) => answers[index] === question.correctAnswerId,
   );
 
-  if (!answers.length) {
-    return redirect("/");
-  }
+  if (isEmptyObject(answers)) return redirect("/");
 
   return (
-    <>
-      <SummaryStore answers={answers} />
-      <h2 className="text-white text-3xl font-bold text-center">{`You got ${result} out of ${correctAnswers.length} correct!`}</h2>
-    </>
+    <h2 className="text-white text-3xl font-bold text-center">{`You got ${correctAnswers.length} out of ${correctAnswers.length} correct!`}</h2>
   );
 }

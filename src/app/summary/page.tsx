@@ -1,12 +1,11 @@
 import { Button } from "@/components/button";
 import { SummaryResult } from "@/components/summary-result";
-import { correctAnswers } from "@/questions/questions";
 import { Link } from "next-view-transitions";
 
 export default function SummaryPage() {
   return (
     <>
-      <SummaryResult correctAnswers={correctAnswers} />
+      <SummaryResult />
       <p className="text-lg text-center">
         Feeling confident? Challenge yourself with another quiz!
       </p>

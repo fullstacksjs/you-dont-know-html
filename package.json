@@ -12,6 +12,7 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@fullstacksjs/toolbox": "4.16.0",
     "@mdx-js/loader": "3.1.0",
     "@mdx-js/react": "3.1.0",
     "@next/mdx": "15.2.0",
