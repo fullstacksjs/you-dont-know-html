@@ -6,7 +6,7 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
-    "lint": "next lint",
+    "lint": "eslint",
     "lint:fix": "next lint --fix",
     "start": "next start",
     "prepare": "husky"
@@ -33,13 +33,13 @@
     "usehooks-ts": "3.1.1"
   },
   "devDependencies": {
-    "@fullstacksjs/eslint-config": "11.7.1",
+    "@fullstacksjs/eslint-config": "11.9.0",
     "@shikijs/rehype": "3.1.0",
     "@types/node": "22.13.8",
     "@types/react": "19.0.10",
     "@types/react-dom": "19.0.4",
     "cspell": "8.17.5",
-    "eslint": "9.21.0",
+    "eslint": "9.22.0",
     "husky": "9.1.7",
     "lint-staged": "15.4.3",
     "prettier": "3.5.2",
