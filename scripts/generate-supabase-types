@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+OUT=./src/lib/supabase/Database.ts
+
+npx --no-install supabase gen types --local >$OUT
+echo -e "/* eslint-disable */\n$(cat $OUT)" >$OUT

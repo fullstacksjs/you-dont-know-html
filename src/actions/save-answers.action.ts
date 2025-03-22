@@ -1,9 +1,9 @@
 "use server";
 
-import type { AnswerDto } from "@/lib/db";
+import type { AnswerDto } from "@/lib/supabase/supabase";
 import type { UserAnswers } from "@/state/useAnswers";
 
-import { createGame } from "@/lib/db";
+import { createGame } from "@/lib/supabase/supabase";
 import { questions } from "@/questions/questions";
 
 export async function saveUserAnswers(userAnswers: UserAnswers) {

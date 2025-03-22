@@ -1,6 +1,6 @@
 import type { QuestionOption } from "@/questions/Question";
 
-import { getAnswersCount, getGamesCount } from "@/lib/db";
+import { getAnswersCount, getGamesCount } from "@/lib/supabase/supabase";
 
 import { ReviewOption } from "./review-option";
 
