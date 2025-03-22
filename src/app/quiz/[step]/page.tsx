@@ -27,9 +27,9 @@ export default async function QuizPage({ params }: Props) {
     if (step === questions.length) {
       await saveUserAnswers(userAnswers);
       redirect("/summary");
+    } else {
+      redirect(`/quiz/${step + 1}`);
     }
-
-    redirect(`/quiz/${step + 1}`);
   };
 
   return (

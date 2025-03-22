@@ -47,8 +47,8 @@ export function ReviewOption({ children, optionId, step, percentage }: Props) {
           "bg-muted2": !isCorrectOption && !isWrongAnswered,
         })}
       />
-      <div className="flex items-center w-full">
-        <span className="flex-1">{children}</span>
+      <div className="flex items-center w-full gap-4">
+        <span className="flex-1 overflow-x-auto">{children}</span>
         <span>{Math.round(percentage)}%</span>
       </div>
     </div>
