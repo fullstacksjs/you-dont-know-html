@@ -9,5 +9,6 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     H: ({ children }) => {
       return <CodeBlock>{children}</CodeBlock>;
     },
+    code: (props) => <code className="inline" {...props}></code>,
   };
 }

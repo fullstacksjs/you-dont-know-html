@@ -118,3 +118,13 @@
     }
   }
 }
+
+:not(.shiki) > code,
+:not(.shiki) [data-custom-codeblock] {
+  font-size: 0.85rem;
+  background: var(--color-shade-2) !important;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 8px;
+  display: inline-block;
+}
