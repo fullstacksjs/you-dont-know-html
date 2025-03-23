@@ -5,7 +5,7 @@ import type { Question } from "../Question";
 import inquiry from "./inquiry.mdx";
 
 export default {
-  id: 3,
+  id: 4,
   inquiry,
   options: [
     { id: 1, text: () => "It does nothing." },

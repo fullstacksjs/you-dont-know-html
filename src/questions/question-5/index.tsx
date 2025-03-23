@@ -4,7 +4,7 @@ import { compileMDX } from "@/lib/mdx/compileMdx";
 import type { Question } from "../Question";
 
 export default {
-  id: 3,
+  id: 5,
   inquiry: () =>
     'How do you properly define the term "CSS" in HTML using semantic elements?',
   options: [
@@ -48,5 +48,5 @@ export default {
     { id: 5, text: () => "I don't know" },
   ],
   explanation: () => "explanation question 4",
-  correctAnswerId: 3,
+  correctAnswerId: 2,
 } satisfies Question;
