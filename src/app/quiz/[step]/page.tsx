@@ -33,7 +33,7 @@ export default async function QuizPage({ params }: Props) {
   };
 
   return (
-    <div className="p-4 md:px-0 w-full md:w-1/2">
+    <>
       <Previews
         getHref={(s) => (s === 0 ? "/" : `/quiz/${s}`)}
         getLabel={(s) => `Question ${s}/${questions.length}`}
@@ -41,6 +41,6 @@ export default async function QuizPage({ params }: Props) {
       />
       <QuestionProgressbar currentStep={currentStep} />
       <Question onAnswer={handleAnswer} question={currentQuestion} />
-    </div>
+    </>
   );
 }

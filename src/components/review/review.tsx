@@ -4,10 +4,9 @@ import { OptionWrapper } from "./option-wrapper";
 
 interface Props {
   question: Question;
-  step: number;
 }
 
-export function Review({ question, step }: Props) {
+export function Review({ question }: Props) {
   return (
     <section>
       <div className="question text-question">
@@ -18,7 +17,6 @@ export function Review({ question, step }: Props) {
         {question.options.map((option) => (
           <OptionWrapper
             key={`${question.id}-${option.id}`}
-            step={step}
             option={option}
             questionId={question.id}
           />
