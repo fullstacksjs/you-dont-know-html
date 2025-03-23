@@ -12,10 +12,10 @@
   --color-foreground: #e6e6e6;
   --color-accent: #f39f47;
   ---color-muted: #ffffff;
-  --color-muted1: #ffffff66;
+  --color-muted-1: #ffffff66;
+  --color-muted-2: #585858;
   --color-success: #00a16e;
   --color-error: #ca343e;
-  --color-muted2: #585858;
   --color-shade: rgb(0 0 0 / 0.1);
   --color-shade-2: rgb(0 0 0 / 0.2);
   --color-border-dark: rgb(0 0 0 / 0.4);
@@ -112,7 +112,7 @@
       &::after {
         display: inline-block;
         content: ".";
-        color: var(--color-muted2);
+        color: var(--color-muted-2);
         translate: -70% -9%;
       }
     }

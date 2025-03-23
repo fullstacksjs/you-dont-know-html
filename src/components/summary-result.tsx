@@ -1,19 +1,17 @@
-"use client";
 import { questions } from "@/questions/questions";
-import { useUserAnswers } from "@/state/useAnswers";
-import { isEmptyObject } from "@fullstacksjs/toolbox";
-import { redirect } from "next/navigation";
+
+import { CorrectAnswerCount } from "./correct-answer-count";
 
 export function SummaryResult() {
-  const answers = useUserAnswers();
-
-  const correctAnswers = questions.filter(
-    (question, index) => answers[index] === question.correctAnswerId,
-  );
-
-  if (isEmptyObject(answers)) return redirect("/");
+  const questionResults = questions.map((q) => ({
+    id: q.id,
+    correctAnswerId: q.correctAnswerId,
+  }));
 
   return (
-    <h2 className="text-white text-3xl font-bold text-center">{`You got ${correctAnswers.length} out of ${questions.length} correct!`}</h2>
+    <h2 className="text-white text-3xl font-bold text-center">
+      You got <CorrectAnswerCount questions={questionResults} /> out of{" "}
+      {questions.length} correct!
+    </h2>
   );
 }
