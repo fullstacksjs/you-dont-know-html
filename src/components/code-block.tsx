@@ -1,4 +1,4 @@
-import { fullstacksJSTheme } from "@/lib/fullstacksjs-theme";
+import { fullstacksJSTheme } from "@/lib/mdx/fullstacksjs-theme";
 import { transformerRenderWhitespace } from "@shikijs/transformers";
 import { toJsxRuntime } from "hast-util-to-jsx-runtime";
 import { Fragment, jsx, jsxs } from "react/jsx-runtime";

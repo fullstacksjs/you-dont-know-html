@@ -1,10 +1,8 @@
 import type { NextConfig } from "next";
 
 import createMDX from "@next/mdx";
-import rehypeShiki from "@shikijs/rehype";
-import { transformerRenderWhitespace } from "@shikijs/transformers";
 
-import { fullstacksJSTheme } from "./src/lib/fullstacksjs-theme";
+import { mdxOptions } from "./src/lib/mdx/mdx-options";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
@@ -16,18 +14,6 @@ const nextConfig: NextConfig = {
   experimental: { useCache: true },
 };
 
-const withMDX = createMDX({
-  options: {
-    rehypePlugins: [
-      [
-        rehypeShiki,
-        {
-          theme: fullstacksJSTheme,
-          transformers: [transformerRenderWhitespace({ position: "boundary" })],
-        },
-      ],
-    ],
-  },
-});
+const withMDX = createMDX({ options: mdxOptions });
 
 export default withMDX(nextConfig);

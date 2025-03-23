@@ -1,30 +1,24 @@
-import { CodeBlock } from "@/components/code-block";
+import { compileMDX } from "@/lib/mdx/compileMdx";
 
 import type { Question } from "../Question";
 
-import Question4 from "./question.mdx";
+import inquiry from "./inquiry.mdx";
 
 export default {
   id: 3,
-  inquiry: Question4,
+  inquiry,
   options: [
     { id: 1, text: () => "It does nothing." },
     {
       id: 2,
-      text: () => (
-        <>
-          It creates a new standalone custom element called{" "}
-          <CodeBlock>{"<counter-button>"}</CodeBlock>
-        </>
+      text: await compileMDX(
+        `It creates a new standalone custom element called <H>{"<counter-button>"}</H>`,
       ),
     },
     {
       id: 3,
-      text: () => (
-        <>
-          It can extend the <CodeBlock>{"<button>"}</CodeBlock> element with a
-          custom behavior defined in the counter-button class.
-        </>
+      text: await compileMDX(
+        `It can extend the <H>{"<button>"}</H> element with a custom behavior defined in the counter-button class.`,
       ),
     },
     { id: 4, text: () => "I don't know" },

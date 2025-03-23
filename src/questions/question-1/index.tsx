@@ -1,45 +1,18 @@
+import { compileMDX } from "@/lib/mdx/compileMdx";
+
 import type { Question } from "../Question";
 
-import { CodeBlock } from "../../components/code-block";
 import explanation from "./explanation.mdx";
-import question from "./question.mdx";
+import inquiry from "./inquiry.mdx";
 
 export default {
   id: 1,
-  inquiry: question,
+  inquiry,
   options: [
-    {
-      id: 1,
-      text: () => (
-        <>
-          <CodeBlock>{"<code>"}</CodeBlock>,<CodeBlock>{"<output>"}</CodeBlock>
-        </>
-      ),
-    },
-    {
-      id: 2,
-      text: () => (
-        <>
-          <CodeBlock>{"<pre>"}</CodeBlock>,<CodeBlock>{"<output>"}</CodeBlock>
-        </>
-      ),
-    },
-    {
-      id: 3,
-      text: () => (
-        <>
-          <CodeBlock>{"<code>"}</CodeBlock>,<CodeBlock>{"<samp>"}</CodeBlock>
-        </>
-      ),
-    },
-    {
-      id: 4,
-      text: () => (
-        <>
-          <CodeBlock>{"<pre>"}</CodeBlock>,<CodeBlock>{"<samp>"}</CodeBlock>
-        </>
-      ),
-    },
+    { id: 1, text: await compileMDX(`<H>{"<code>"}</H>,<H>{"<output>"}</H>`) },
+    { id: 2, text: await compileMDX(`<H>{"<pre>"}</H>,<H>{"<output>"}</H>`) },
+    { id: 3, text: await compileMDX(`<H>{"<code>"}</H>,<H>{"<samp>"}</H>`) },
+    { id: 4, text: await compileMDX(`<H>{"<pre>"}</H>,<H>{"<samp>"}</H>`) },
     { id: 5, text: () => "I don't know" },
   ],
   explanation,

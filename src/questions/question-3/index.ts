@@ -1,13 +1,13 @@
 import type { Question } from "../Question";
 
+import inquiry from "./inquiry.mdx";
 import option1 from "./option-1.mdx";
 import option2 from "./option-2.mdx";
 import option3 from "./option-3.mdx";
-import Question3 from "./question.mdx";
 
 export default {
   id: 3,
-  inquiry: Question3,
+  inquiry,
   options: [
     { id: 3, text: option3 },
     { id: 1, text: option1 },
