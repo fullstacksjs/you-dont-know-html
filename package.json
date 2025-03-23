@@ -23,6 +23,7 @@
     "@tailwindcss/postcss": "4.0.9",
     "@types/mdx": "2.0.13",
     "clsx": "2.1.1",
+    "dedent": "1.5.3",
     "hast-util-to-jsx-runtime": "2.3.5",
     "next": "15.2.0-canary.39",
     "next-view-transitions": "0.3.4",
