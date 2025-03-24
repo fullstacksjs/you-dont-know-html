@@ -7,6 +7,7 @@ import question4 from "./question-4";
 import question5 from "./question-5";
 import question6 from "./question-6";
 import question7 from "./question-7";
+import question8 from "./question-8";
 
 export const questions = [
   question1,
@@ -16,6 +17,7 @@ export const questions = [
   question5,
   question6,
   question7,
+  question8,
 ] satisfies Question[];
 
 export const correctAnswers = questions.map(
