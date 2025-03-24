@@ -1,9 +1,9 @@
 import type { AnswerEvent } from "@/components/question/question";
 
 import { saveUserAnswers } from "@/actions/save-answers.action";
-import { Previews } from "@/components/question/previews";
 import { Question } from "@/components/question/question";
 import { QuestionProgressbar } from "@/components/question/question-progressbar";
+import { QuizHeader } from "@/components/question/quiz-header";
 import { questions } from "@/questions/questions";
 import { notFound, redirect } from "next/navigation";
 
@@ -34,7 +34,7 @@ export default async function QuizPage({ params }: Props) {
 
   return (
     <>
-      <Previews
+      <QuizHeader
         getHref={(s) => (s === 0 ? "/" : `/quiz/${s}`)}
         getLabel={(s) => `Question ${s}/${questions.length}`}
         step={step}

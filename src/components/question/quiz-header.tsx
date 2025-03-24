@@ -7,7 +7,7 @@ interface Props {
   getLabel: (step: number) => string;
 }
 
-export function Previews({ step, getHref, getLabel }: Props) {
+export function QuizHeader({ step, getHref, getLabel }: Props) {
   return (
     <Link
       className="text-muted-1 font-mono p-2 rounded-lg inline-flex items-center gap-3 cursor-pointer mb-2"

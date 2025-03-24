@@ -1,11 +1,11 @@
-import { Previews } from "@/components/question/previews";
+import { QuizHeader } from "@/components/question/quiz-header";
 import { Review } from "@/components/review/review";
 import { questions } from "@/questions/questions";
 
 export default function ReviewPage() {
   return (
     <>
-      <Previews
+      <QuizHeader
         getHref={() => "/summary"}
         getLabel={() => "Reviews"}
         step={1}
