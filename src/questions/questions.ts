@@ -3,6 +3,7 @@ import type { Question } from "./Question";
 import question1 from "./question-1";
 import question10 from "./question-10";
 import question11 from "./question-11";
+import question12 from "./question-12";
 import question2 from "./question-2";
 import question3 from "./question-3";
 import question4 from "./question-4";
@@ -24,6 +25,7 @@ export const questions = [
   question9,
   question10,
   question11,
+  question12,
 ] satisfies Question[];
 
 export const correctAnswers = questions.map(
