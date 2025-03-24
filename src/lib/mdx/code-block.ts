@@ -1,5 +1,5 @@
 import dedent from "dedent";
 
 export const codeBlock = (s: TemplateStringsArray) => {
-  return `\`\`\`html\n${dedent`${s.join("\n")}`}\n\`\`\``;
+  return `\`\`\`html-derivative\n${dedent`${s.join("\n")}`}\n\`\`\``;
 };

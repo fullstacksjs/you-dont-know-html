@@ -1,17 +1,19 @@
 import type { Question } from "./Question";
 
-import questionOne from "./question-1";
-import questionTwo from "./question-2";
-import questionThree from "./question-3";
-import questionFour from "./question-4";
-import questionFive from "./question-5";
+import question1 from "./question-1";
+import question2 from "./question-2";
+import question3 from "./question-3";
+import question4 from "./question-4";
+import question5 from "./question-5";
+import question6 from "./question-6";
 
 export const questions = [
-  questionOne,
-  questionTwo,
-  questionThree,
-  questionFour,
-  questionFive,
+  question1,
+  question2,
+  question3,
+  question4,
+  question5,
+  question6,
 ] satisfies Question[];
 
 export const correctAnswers = questions.map(
