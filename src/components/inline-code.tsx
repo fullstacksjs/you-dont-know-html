@@ -8,11 +8,12 @@ interface Props {
   children: string;
 }
 
-export async function CodeBlock(props: Props) {
+export async function InlineCode(props: Props) {
   const out = await codeToHast(props.children, {
     lang: "html-derivative",
     theme: fullstacksJSTheme,
     transformers: [transformerRenderWhitespace({ position: "boundary" })],
+    tabindex: false,
   });
 
   return toJsxRuntime(out, {

@@ -31,7 +31,6 @@ export function Question({ question, onAnswer }: Props) {
           <li key={`${question.id}-${option.id}`}>
             <QuestionOption
               id={option.id}
-              name={`question-${question.id}-option-${option.id}`}
               onSelect={handleSelect}
               questionId={question.id}
             >

@@ -11,6 +11,7 @@ export const mdxOptions: NextMDXOptions["options"] = {
       rehypeShiki,
       {
         theme: fullstacksJSTheme,
+        tabindex: false,
         transformers: [transformerRenderWhitespace({ position: "boundary" })],
       },
     ],

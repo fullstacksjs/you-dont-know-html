@@ -29,6 +29,7 @@
     "next-view-transitions": "0.3.4",
     "postcss": "8.5.3",
     "react": "19.0.0",
+    "react-aria": "3.38.1",
     "react-dom": "19.0.0",
     "server-only": "0.0.1",
     "tailwind-merge": "3.0.2",

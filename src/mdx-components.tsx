@@ -1,13 +1,13 @@
 import type { MDXComponents } from "mdx/types";
 
-import { CodeBlock } from "./components/code-block";
+import { InlineCode } from "./components/inline-code";
 
 // eslint-disable-next-line @eslint-react/hooks-extra/no-useless-custom-hooks, @eslint-react/hooks-extra/ensure-custom-hooks-using-other-hooks
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     ...components,
     H: ({ children }) => {
-      return <CodeBlock>{children}</CodeBlock>;
+      return <InlineCode>{children}</InlineCode>;
     },
     code: (props) => <code className="inline" {...props}></code>,
   };
