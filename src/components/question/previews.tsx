@@ -10,7 +10,7 @@ interface Props {
 export function Previews({ step, getHref, getLabel }: Props) {
   return (
     <Link
-      className="text-muted-1 p-2 rounded-lg flex items-center gap-3 cursor-pointer mb-2"
+      className="text-muted-1 font-mono p-2 rounded-lg inline-flex items-center gap-3 cursor-pointer mb-2"
       href={getHref(step - 1)}
     >
       <PreviewsIcon />

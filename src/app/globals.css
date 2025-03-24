@@ -4,6 +4,7 @@
   font-size: clamp(0.625rem, 1rem + 0.3vw, 1.4rem);
   --sb-track-color: var(--color-shade);
   --sb-thumb-color: var(--color-shade-2);
+  --font-mono: var(--font-fira-mono);
 }
 
 @theme {
@@ -25,6 +26,7 @@
   --text-hero: 2.5rem;
   --text-hero--line-height: 1.3;
   --text-hero--font-weight: 700;
+
   --text-question: 1.7rem;
   --text-question--line-height: 1.2;
   --text-question--font-weight: 700;
@@ -87,7 +89,7 @@
   overflow: auto;
 
   code {
-    font-family: var(--font-fira-mono);
+    font-family: var(--font-mono);
     counter-reset: step;
     counter-increment: step 0;
     font-size: 1.1rem;
