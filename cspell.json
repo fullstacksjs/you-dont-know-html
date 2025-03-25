@@ -14,5 +14,5 @@
     "dont",
     "jsxs"
   ],
-  "ignorePaths": ["pnpm-lock.yaml", ".github/**"]
+  "ignorePaths": ["pnpm-lock.yaml", ".github/**", ".env.example", ".env"]
 }

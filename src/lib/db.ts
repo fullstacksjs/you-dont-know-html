@@ -1,6 +1,4 @@
-import { PrismaClient } from "@prisma/client";
-
-const prisma = new PrismaClient();
+import { createServerSupabaseClient } from "./supabase/createServerClient";
 
 export interface AnswerDto {
   questionId: number;
@@ -9,11 +7,14 @@ export interface AnswerDto {
 }
 
 export const createGame = async (answers: AnswerDto[]) => {
-  return prisma.game.create({ data: { answers: { create: answers } } });
+  const supabase = await createServerSupabaseClient();
+  supabase.from("game").insert({});
 };
 
-export const getAnswersCount = (questionId: number, optionId: number) =>
-  prisma.answer.count({ where: { questionId, answerId: optionId } });
+export const getAnswersCount = (questionId: number, optionId: number) => {
+  // prisma.answer.count({ where: { questionId, answerId: optionId } });
+};
 
-export const getGamesCount = (questionId: number) =>
-  prisma.answer.count({ where: { questionId } });
+export const getGamesCount = (questionId: number) => {
+  // prisma.answer.count({ where: { questionId } });
+};
