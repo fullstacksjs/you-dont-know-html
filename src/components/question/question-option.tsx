@@ -35,6 +35,7 @@ export function QuestionOption({ children, questionId, id, onSelect }: Props) {
         <input
           className="hidden peer"
           defaultChecked={isAnswered && id === userAnswer}
+          name={`option-${questionId}`}
           type="radio"
         />
         <div className="hidden size-[14px] rounded-full bg-accent peer-checked:block"></div>
