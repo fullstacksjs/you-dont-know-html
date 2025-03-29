@@ -1,6 +1,8 @@
 import type { Question } from "@/questions/Question";
 import type { UserAnswers } from "@/state/useAnswers";
 
+import { isDuplicationError, isPermissionError } from "@/lib/supabase/supabase";
+
 import { QuestionOption } from "./question-option";
 
 export interface AnswerEvent {
@@ -11,13 +13,25 @@ export interface AnswerEvent {
 
 interface Props {
   question: Question;
-  onAnswer: (e: AnswerEvent) => Promise<void>;
+  onAnswer: (e: AnswerEvent) => Promise<{ error?: string }>;
 }
 
 export function Question({ question, onAnswer }: Props) {
   const handleSelect = async (optionId: number, userAnswers: UserAnswers) => {
     "use server";
-    await onAnswer({ questionId: question.id, optionId, userAnswers });
+    try {
+      await onAnswer({ questionId: question.id, optionId, userAnswers });
+    } catch (e) {
+      if (isPermissionError(e)) {
+        throw Error("Not permitted! The project might be misconfigured.", {
+          cause: e,
+        });
+      }
+      if (isDuplicationError(e)) {
+        throw Error("You have already submitted your answers.", { cause: e });
+      }
+      throw e;
+    }
   };
 
   return (

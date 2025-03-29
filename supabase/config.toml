@@ -1,0 +1,48 @@
+# https://supabase.com/docs/guides/local-development/cli/config
+project_id = "you-dont-know-html"
+
+[api]
+enabled = true
+port = 54321
+schemas = ["public", "graphql_public"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
+
+[api.tls]
+enabled = false
+
+[db]
+port = 54322
+shadow_port = 54320
+major_version = 15
+
+[db.migrations]
+schema_paths = []
+
+[db.seed]
+enabled = true
+sql_paths = ["./seed.sql"]
+
+[studio]
+enabled = true
+port = 54323
+api_url = "http://127.0.0.1"
+
+
+[analytics]
+enabled = true
+port = 54327
+backend = "postgres"
+
+# Experimental features may be deprecated any time
+[experimental]
+# Configures Postgres storage engine to use OrioleDB (S3)
+orioledb_version = ""
+# Configures S3 bucket URL, eg. <bucket_name>.s3-<region>.amazonaws.com
+s3_host = "env(S3_HOST)"
+# Configures S3 bucket region, eg. us-east-1
+s3_region = "env(S3_REGION)"
+# Configures AWS_ACCESS_KEY_ID for S3 bucket
+s3_access_key = "env(S3_ACCESS_KEY)"
+# Configures AWS_SECRET_ACCESS_KEY for S3 bucket
+s3_secret_key = "env(S3_SECRET_KEY)"
