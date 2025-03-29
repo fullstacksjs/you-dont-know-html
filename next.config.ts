@@ -7,11 +7,15 @@ import { mdxOptions } from "./src/lib/mdx/mdx-options";
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
-  async redirects() {
-    await Promise.resolve(true);
-    return [{ source: "/quiz", destination: "/quiz/1", permanent: true }];
+  redirects() {
+    return Promise.resolve([
+      { source: "/quiz", destination: "/quiz/1", permanent: true },
+    ]);
   },
-  experimental: { useCache: true },
+  experimental: {
+    useCache: true,
+    viewTransition: true,
+  },
 };
 
 const withMDX = createMDX({ options: mdxOptions });

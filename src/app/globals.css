@@ -128,3 +128,59 @@
   border-radius: 8px;
   display: inline-block;
 }
+
+::view-transition-group(question) {
+  animation-duration: 10ms;
+  display: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition-group(question) {
+    animation-duration: 200ms;
+    display: block;
+  }
+
+  ::view-transition-old(question) {
+    animation-name: slide-out;
+  }
+
+  ::view-transition-new(question) {
+    animation-name: slide-in;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    translate: 0 100vh;
+  }
+  to {
+    translate: 0;
+  }
+}
+
+@keyframes slide-out {
+  from {
+    translate: 0;
+  }
+  to {
+    translate: 0 100vh;
+  }
+}
