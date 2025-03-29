@@ -1,6 +1,6 @@
 import { Button } from "@/components/button";
 import { SummaryResult } from "@/components/summary-result";
-import { Link } from "next-view-transitions";
+import Link from "next/link";
 
 export default function SummaryPage() {
   return (

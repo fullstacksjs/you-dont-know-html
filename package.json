@@ -30,7 +30,6 @@
     "dedent": "1.5.3",
     "hast-util-to-jsx-runtime": "2.3.6",
     "next": "15.3.0-canary.24",
-    "next-view-transitions": "0.3.4",
     "postcss": "8.5.3",
     "react": "19.1.0",
     "react-aria": "3.38.1",
@@ -56,7 +55,7 @@
     "typescript": "5.8.2"
   },
   "volta": {
-    "node": "22.13.1",
+    "node": "22.14.0",
     "pnpm": "10.2.0"
   },
   "pnpm": {
