@@ -26,7 +26,7 @@ export const Button = ({
         {
           "bg-accent text-background ": variant === "contained",
           "bg-shade-2 text-accent": variant === "secondary",
-          "py-2.5 text-center font-bold text-xl rounded-md": size === "md",
+          "py-2.5 text-center font-bold rounded-md": size === "md",
         },
         className,
       )}
