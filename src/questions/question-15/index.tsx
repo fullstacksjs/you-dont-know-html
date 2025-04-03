@@ -1,8 +1,12 @@
+import { compileMDX } from "@/lib/mdx/compileMdx";
+
 import type { Question } from "../Question";
 
 export default {
   id: 15,
-  inquiry: () => "What is the purpose of the inert attribute in HTML?",
+  inquiry: await compileMDX(
+    "What is the purpose of the `inert` attribute in HTML?",
+  ),
   options: [
     { id: 1, text: () => "To prevent elements from being interactive." },
     {

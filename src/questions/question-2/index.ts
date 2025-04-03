@@ -6,9 +6,9 @@ export default {
   id: 2,
   inquiry,
   options: [
-    { id: 1, text: () => "red" },
-    { id: 2, text: () => "blue" },
-    { id: 3, text: () => "white" },
+    { id: 1, text: () => "Red" },
+    { id: 2, text: () => "Blue" },
+    { id: 3, text: () => "White" },
     { id: 4, text: () => "I don't know" },
   ],
   explanation: () => "explanation question 2",
