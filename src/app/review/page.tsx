@@ -13,6 +13,7 @@ export default function ReviewPage() {
       {questions.map((question) => (
         <div className="mb-14" key={question.id}>
           <Review question={question} />
+          <hr className="text-border-dark my-12" />
         </div>
       ))}
     </>

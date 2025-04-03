@@ -10,6 +10,7 @@
 @theme {
   --color-*: initial;
   --color-background: #23252e;
+  --color-bg-elevated: #282b37;
   --color-foreground: #e6e6e6;
   --color-accent: #f39f47;
   ---color-muted: #ffffff;
@@ -30,6 +31,10 @@
   --text-question: 1.7rem;
   --text-question--line-height: 1.2;
   --text-question--font-weight: 700;
+
+  --text-review: 1.2rem;
+  --text-review--line-height: 1.2;
+  --text-review--font-weight: 700;
 
   --rounded-md: 4px;
 

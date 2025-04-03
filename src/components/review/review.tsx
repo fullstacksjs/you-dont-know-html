@@ -9,10 +9,10 @@ interface Props {
 export function Review({ question }: Props) {
   return (
     <section>
-      <div className="question text-question">
+      <h2 className="text-2xl font-bold mb-4">Question #{question.id}</h2>
+      <div className="question text-review">
         <question.inquiry />
       </div>
-      <hr className="text-border-dark my-6" />
       <ul className="flex flex-col gap-4">
         {question.options.map((option) => (
           <OptionWrapper
@@ -22,6 +22,14 @@ export function Review({ question }: Props) {
           />
         ))}
       </ul>
+      <details className="question bg-bg-elevated px-6 py-4 mt-6 rounded">
+        <summary className="text-lg font-bold cursor-pointer focus-visible:outline-none focus-visible:underline ">
+          Explanation
+        </summary>
+        <div className="mt-4">
+          <question.explanation />
+        </div>
+      </details>
     </section>
   );
 }
