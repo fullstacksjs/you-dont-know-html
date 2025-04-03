@@ -14,5 +14,11 @@
     "dont",
     "jsxs"
   ],
-  "ignorePaths": ["pnpm-lock.yaml", ".github/**", ".env.example", ".env"]
+  "ignorePaths": [
+    "pnpm-lock.yaml",
+    ".github/**",
+    ".env.example",
+    ".env",
+    "src/lib/supabase/Database.ts"
+  ]
 }
