@@ -11,6 +11,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {children}
       </blockquote>
     ),
+    h3: ({ children }) => <h3 className="text-lg font-bold">{children}</h3>,
     a: ({ children, ...props }) => (
       <a
         data-external
