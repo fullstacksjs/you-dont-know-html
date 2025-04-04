@@ -1,0 +1,14 @@
+> The `is` global attribute allows you to specify that a standard HTML element should behave like a defined custom built-in element. [Reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/is)
+
+It can be used to extend a built-in element, like `button`, to add custom behavior.
+
+```js
+class CounterButton extends HTMLElement {
+}
+
+customElements.define(
+  "counter-button",
+  CounterButton,
+  { extends: "button" },
+);
+```
