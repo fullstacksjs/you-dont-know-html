@@ -26,6 +26,8 @@ export default {
     },
     { id: 5, text: () => "I don't know" },
   ],
-  explanation: () => "explanation question 6",
+  explanation: await compileMDX(
+    "> The <H>{'<meter>'}</H> HTML element represents either a scalar value within a known range or a fractional value. [Reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meter)",
+  ),
   correctAnswerId: 2,
 } satisfies Question;
