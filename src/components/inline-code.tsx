@@ -22,7 +22,7 @@ export async function InlineCode(props: Props) {
     jsxs,
     components: {
       code: Fragment,
-      pre: (p) => <span data-custom-codeblock {...p} />,
+      pre: (p) => <span data-codeblock {...p} />,
     },
   }) as React.JSX.Element;
 }

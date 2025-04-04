@@ -1,0 +1,16 @@
+To understand why FullstacksJS inherits the red color, we need to understand two facts about HTML syntax:
+
+> 1. Self-closing tags (<H>\<tag /></H>) do not exist in HTML. If a trailing slash character is present in the start tag of an HTML element, HTML parsers ignore that slash character. [Reference](https://developer.mozilla.org/en-US/docs/Glossary/Void_element#self-closing_tags)
+
+> 2. A `p` element's end tag may be omitted if the p element is immediately followed by an `div`, `dl`, `fieldset`, `figcaption`, `figure`, `footer`, `form`, `h1`, `h2`, `h3`, `h4`, `h5`, `h6`, `header`, `hgroup`, `hr`, `main`, `menu`, `nav`, `ol`, `p`, `pre`, `search`, `section`, `table`, or `ul` element, or if there is no more content in the parent element and the parent element is an HTML element that is not an `a`, `audio`, `del`, `ins`, `map`, `noscript`, or `video` element, or an autonomous custom element. [Reference](https://html.spec.whatwg.org/multipage/syntax.html#optional-tags)
+
+So the code is equivalent to:
+
+```html
+<div style="color: blue">
+  <p style="color: red">FullstacksJS</p>
+</div>
+```
+
+So "FullstacksJS" inherits the red color from <H>\<p></H>.
+

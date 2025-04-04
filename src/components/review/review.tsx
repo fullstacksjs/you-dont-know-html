@@ -22,11 +22,11 @@ export function Review({ question }: Props) {
           />
         ))}
       </ul>
-      <details className="question bg-bg-elevated px-6 py-4 mt-6 rounded">
+      <details className="bg-bg-elevated px-6 py-4 mt-6 rounded">
         <summary className="text-lg font-bold cursor-pointer focus-visible:outline-none focus-visible:underline ">
           Explanation
         </summary>
-        <div className="mt-4">
+        <div className="question mt-4 flex flex-col gap-4">
           <question.explanation />
         </div>
       </details>

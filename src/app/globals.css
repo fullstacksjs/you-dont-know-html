@@ -13,13 +13,14 @@
   --color-bg-elevated: #282b37;
   --color-foreground: #e6e6e6;
   --color-accent: #f39f47;
-  ---color-muted: #ffffff;
   --color-muted-1: #ffffff66;
   --color-muted-2: #585858;
   --color-success: #00a16e;
+  --color-info: #a96fff;
   --color-error: #ca343e;
   --color-shade: rgb(0 0 0 / 0.1);
   --color-shade-2: rgb(0 0 0 / 0.2);
+  --color-shade-4: rgb(0 0 0 / 0.4);
   --color-border-dark: rgb(0 0 0 / 0.4);
 
   --spacing: 0.25rem;
@@ -81,9 +82,13 @@
 }
 
 .question {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacing) * 4);
+  margin-bottom: calc(var(--spacing) * 4);
+
   .shiki:has(code) {
     padding: 1rem 1rem;
-    margin: calc(var(--spacing) * 4) 0;
     background-color: var(--color-shade) !important;
     border: 1px solid var(--color-shade-2);
     border-radius: var(--rounded-md);
@@ -127,11 +132,26 @@
 }
 
 :not(.shiki) > code,
-:not(.shiki) [data-custom-codeblock] {
+:not(.shiki) [data-codeblock] {
   background: var(--color-shade-2) !important;
   padding: 4px 8px;
   border-radius: 8px;
   display: inline-block;
+}
+
+a[data-external]::after {
+  --un-icon: url("data:image/svg+xml;utf8,%3Csvg viewBox='0 0 24 24' width='1.2em' height='1.2em' xmlns='http://www.w3.org/2000/svg' %3E%3Cpath fill='currentColor' fill-rule='evenodd' d='M11.376 2.016h6.608v6.608h-1.5V4.577l-5.87 5.87l-.53.53l-1.061-1.06l.53-.53l5.87-5.87h-4.047zM5 5.5h4V4H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2v-4h-1.5v4a.5.5 0 0 1-.5.5H5a.5.5 0 0 1-.5-.5V6a.5.5 0 0 1 .5-.5' clip-rule='evenodd'/%3E%3C/svg%3E");
+  content: '""';
+  -webkit-mask: var(--un-icon) no-repeat;
+  mask: var(--un-icon) no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  background-color: currentColor;
+  color: inherit;
+  display: inline-block;
+  width: 1.3em;
+  height: 1.3em;
+  translate: 0.1em 0.3em;
 }
 
 ::view-transition-group(question) {
