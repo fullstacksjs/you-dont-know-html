@@ -51,6 +51,10 @@ export default {
     },
     { id: 5, text: () => "I don't know" },
   ],
-  explanation: () => "explanation question 8",
+  explanation: await compileMDX(`
+      > The <H>{'<time>'}</H> HTML element represents a specific period in time.
+      > It may include the <H>{"datetime"}</H> attribute to translate dates into machine-readable format, allowing for better search engine results or custom features such as reminders.
+      > [Reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time)
+    `),
   correctAnswerId: 4,
 } satisfies Question;
