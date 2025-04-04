@@ -1,0 +1,22 @@
+> A `p` element's end tag can be omitted if the `p` element is immediately followed by
+> an `address`, `article`, `aside`, `blockquote`, `details`, `dialog`, `div`, `dl`,
+> `fieldset`, `figcaption`, `figure`, `footer`, `form`, `h1`, `h2`, `h3`, `h4`, `h5`,
+> `h6`, `header`, `hgroup`, `hr`, `main`, `menu`, `nav`, `ol`, `p`, `pre`, `search`,
+> `section`, `table`, or `ul` element,
+> or if there is no more content in the parent element and the parent element is an HTML element that is not
+> an `a`, `audio`, `del`, `ins`, `map`, `noscript`, or `video` element, or an autonomous custom element.
+> [Spec Reference](https://html.spec.whatwg.org/multipage/grouping-content.html#the-p-element)
+
+This mean the parser will automatically close the `p` tag when it encounters the next start `p` tag.
+
+Therefore the code will be equivalent to:
+
+```html
+<div style="color: red">
+  <p style="color: blue"></p>
+  <p>FullstacksJS</p>
+  <p style="color: white"></p>
+</div>
+```
+
+And the color of the text "FullstacksJS" is blue.
