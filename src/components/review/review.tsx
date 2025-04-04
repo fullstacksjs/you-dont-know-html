@@ -26,7 +26,7 @@ export function Review({ question }: Props) {
         <summary className="text-lg font-bold cursor-pointer focus-visible:outline-none focus-visible:underline ">
           Explanation
         </summary>
-        <div className="question mt-4 flex flex-col gap-4">
+        <div className="question mt-4 flex flex-col gap-6">
           <question.explanation />
         </div>
       </details>

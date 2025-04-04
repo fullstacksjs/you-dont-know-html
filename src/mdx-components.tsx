@@ -22,6 +22,12 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {children}
       </a>
     ),
+    ol: ({ children }) => (
+      <ol className="list-decimal list-inside">{children}</ol>
+    ),
+    li: ({ children }) => (
+      <li className="not-[:last-child]:mb-2">{children}</li>
+    ),
     hr: () => <hr className="text-border-dark" />,
     H: ({ children }) => {
       return <InlineCode>{children}</InlineCode>;
