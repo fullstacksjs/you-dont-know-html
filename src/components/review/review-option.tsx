@@ -33,11 +33,11 @@ export function ReviewOption({
   return (
     <div
       className={cn(
-        "flex w-full items-center gap-3 rounded-md border border-border-dark p-3 has-checked:text-accent relative",
+        "flex w-full items-center gap-3 rounded-md border p-3 has-checked:text-accent relative overflow-clip",
         {
           "border-success": isCorrectOption,
           "border-error": isWrongAnswered,
-          "border-muted-2": !isCorrectOption && !isWrongAnswered,
+          "border-border-dark": !isCorrectOption && !isWrongAnswered,
         },
       )}
     >

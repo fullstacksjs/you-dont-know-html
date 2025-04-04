@@ -140,18 +140,16 @@
 }
 
 a[data-external]::after {
-  --un-icon: url("data:image/svg+xml;utf8,%3Csvg viewBox='0 0 24 24' width='1.2em' height='1.2em' xmlns='http://www.w3.org/2000/svg' %3E%3Cpath fill='currentColor' fill-rule='evenodd' d='M11.376 2.016h6.608v6.608h-1.5V4.577l-5.87 5.87l-.53.53l-1.061-1.06l.53-.53l5.87-5.87h-4.047zM5 5.5h4V4H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2v-4h-1.5v4a.5.5 0 0 1-.5.5H5a.5.5 0 0 1-.5-.5V6a.5.5 0 0 1 .5-.5' clip-rule='evenodd'/%3E%3C/svg%3E");
+  --un-icon: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxMiAxMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik02LjgyNTQxIDEuMjA5OTZIMTAuNzkwMlY1LjE3NDc2SDkuODkwMlYyLjc0NjU2TDYuMzY4MjEgNi4yNjg1Nkw2LjA1MDIgNi41ODY1Nkw1LjQxMzYgNS45NTA1Nkw1LjczMTYxIDUuNjMyNTZMOS4yNTM2MSAyLjExMDU2SDYuODI1NDFWMS4yMDk5NlpNMi45OTk4IDMuMzAwMzZINS4zOTk4VjIuNDAwMzZIMi45OTk4QzIuNjgxNTQgMi40MDAzNiAyLjM3NjMyIDIuNTI2NzkgMi4xNTEyOCAyLjc1MTgzQzEuOTI2MjMgMi45NzY4OCAxLjc5OTggMy4yODIxIDEuNzk5OCAzLjYwMDM2VjkuMDAwMzZDMS43OTk4IDkuMzE4NjIgMS45MjYyMyA5LjYyMzg1IDIuMTUxMjggOS44NDg4OUMyLjM3NjMyIDEwLjA3MzkgMi42ODE1NCAxMC4yMDA0IDIuOTk5OCAxMC4yMDA0SDguMzk5OEM4LjcxODA2IDEwLjIwMDQgOS4wMjMyOSAxMC4wNzM5IDkuMjQ4MzMgOS44NDg4OUM5LjQ3MzM4IDkuNjIzODUgOS41OTk4IDkuMzE4NjIgOS41OTk4IDkuMDAwMzZWNi42MDAzNkg4LjY5OThWOS4wMDAzNkM4LjY5OTggOS4wNzk5MyA4LjY2ODIgOS4xNTYyMyA4LjYxMTk0IDkuMjEyNDlDOC41NTU2OCA5LjI2ODc1IDguNDc5MzcgOS4zMDAzNiA4LjM5OTggOS4zMDAzNkgyLjk5OThDMi45MjAyNCA5LjMwMDM2IDIuODQzOTMgOS4yNjg3NSAyLjc4NzY3IDkuMjEyNDlDMi43MzE0MSA5LjE1NjIzIDIuNjk5OCA5LjA3OTkzIDIuNjk5OCA5LjAwMDM2VjMuNjAwMzZDMi42OTk4IDMuNTIwOCAyLjczMTQxIDMuNDQ0NDkgMi43ODc2NyAzLjM4ODIzQzIuODQzOTMgMy4zMzE5NyAyLjkyMDI0IDMuMzAwMzYgMi45OTk4IDMuMzAwMzZaIiBmaWxsPSJibGFjayIvPgo8L3N2Zz4K");
   content: '""';
   -webkit-mask: var(--un-icon) no-repeat;
   mask: var(--un-icon) no-repeat;
   -webkit-mask-size: 100% 100%;
   mask-size: 100% 100%;
   background-color: currentColor;
+  margin-left: 0.1em;
   color: inherit;
-  display: inline-block;
-  width: 1.3em;
-  height: 1.3em;
-  translate: 0.1em 0.3em;
+  display: inline;
 }
 
 ::view-transition-group(question) {

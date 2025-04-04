@@ -3,6 +3,7 @@ import { compileMDX } from "@/lib/mdx/compileMdx";
 
 import type { Question } from "../Question";
 
+import explanation from "./explanation.mdx";
 import inquiry from "./inquiry.mdx";
 
 export default {
@@ -37,6 +38,6 @@ export default {
       `),
     },
   ],
-  explanation: () => "explanation question 3",
+  explanation,
   correctAnswerId: 1,
 } satisfies Question;
