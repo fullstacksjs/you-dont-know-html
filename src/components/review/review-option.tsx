@@ -50,7 +50,7 @@ export function ReviewOption({
         })}
       />
       <div className="flex items-center w-full">
-        <span className="flex-1">{children}</span>
+        <span className="flex-1 overflow-x-auto">{children}</span>
         <span>{Math.round(percentage)}%</span>
       </div>
     </div>
