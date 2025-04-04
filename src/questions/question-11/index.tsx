@@ -1,5 +1,6 @@
 import type { Question } from "../Question";
 
+import explanation from "./explanation.mdx";
 import inquiry from "./inquiry.mdx";
 
 export default {
@@ -10,6 +11,6 @@ export default {
     { id: 2, text: () => "White" },
     { id: 3, text: () => "I don't know" },
   ],
-  explanation: () => "explanation question 11",
+  explanation,
   correctAnswerId: 1,
 } satisfies Question;
