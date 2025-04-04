@@ -1,0 +1,42 @@
+This one’s a bit tricky, but here’s the breakdown:
+
+### Understanding “normal elements” and end tag omission
+
+In HTML, elements like <H>{'<div>'}</H> are considered normal elements. According to the spec:
+
+> The start and end tags of certain normal elements can be omitted. [Spec reference](https://html.spec.whatwg.org/multipage/syntax.html#normal-elements)
+
+However, for <H>{'<div>'}</H>, the element definition clearly states:
+
+> Tag omission in text/html:
+>
+> Neither tag is omissible. [Spec reference](https://html.spec.whatwg.org/multipage/grouping-content.html#the-div-element)
+
+So, semantically valid HTML must include both <H>{'<div>'}</H> and <H>{'</div>'}</H>.
+
+### But why does it still work in browsers?
+
+This is where the HTML parser spec comes in — particularly the ["in body" insertion mode](https://html.spec.whatwg.org/multipage/parsing.html#parsing-main-inbody). This defines how HTML parsers should behave.
+
+From the spec:
+
+> An end tag whose tag name is one of: `div`, `section`, `article` ...
+>
+> **If there is no matching open element on the stack**
+>
+> It's a parse error and the token is ignored.
+>
+> **Otherwise:**
+>
+> Generate implied end tags.
+
+In short, the parser will generate implied end tags for any unclosed normal elements.
+
+```html
+<div style="color: red">
+  <div style="color: blue">
+    <div>FullstacksJS</div>
+  </div>
+  <div style="color: white"></div>
+</div>
+```
