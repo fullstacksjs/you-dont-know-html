@@ -1,11 +1,13 @@
-import type { Question } from "@/questions/Question";
+"use client";
 import type { UserAnswers } from "@/state/useAnswers";
 
+import { submitAnswer } from "@/actions/submit-answer";
+import { useStoreAnswer, useUserAnswers } from "@/state/useAnswers";
 import {
-  isDuplicationError,
-  isPermissionError,
-} from "@/lib/supabase/supabase-error";
-import { unstable_ViewTransition as ViewTransition } from "react";
+  startTransition,
+  useActionState,
+  unstable_ViewTransition as ViewTransition,
+} from "react";
 
 import { QuestionOption } from "./question-option";
 
@@ -16,51 +18,55 @@ export interface AnswerEvent {
 }
 
 interface Props {
-  question: Question;
-  onAnswer: (e: AnswerEvent) => Promise<{ error?: string }>;
+  id: number;
+  inquiry: React.ReactNode;
+  step: number;
+  options: {
+    id: number;
+    text: React.ReactNode;
+  }[];
+  isLastQuestion: boolean;
 }
 
-export function Question({ question, onAnswer }: Props) {
-  const handleSelect = async (optionId: number, userAnswers: UserAnswers) => {
-    "use server";
-    try {
-      await onAnswer({ questionId: question.id, optionId, userAnswers });
-    } catch (e) {
-      if (isPermissionError(e)) {
-        throw Error("Not permitted! The project might be misconfigured.", {
-          cause: e,
-        });
-      }
-      if (isDuplicationError(e)) {
-        throw Error("You have already submitted your answers.", { cause: e });
-      }
-      throw e;
-    }
+export function Question({
+  id,
+  inquiry,
+  options,
+  step,
+  isLastQuestion,
+}: Props) {
+  const [, formAction, pending] = useActionState(submitAnswer, {});
+  const setUserAnswers = useStoreAnswer(id);
+  const userAnswers = useUserAnswers();
+
+  const handleSelect = (optionId: number) => {
+    setUserAnswers(optionId);
+    startTransition(() => {
+      formAction({ step, answers: userAnswers, isLastQuestion });
+    });
   };
 
   return (
     <ViewTransition name="question">
-      <section>
-        <div className="question text-question">
-          <question.inquiry />
-        </div>
+      <form>
+        <div className="question text-question">{inquiry}</div>
         <hr className="w-full my-5 text-shade-2" />
         <ul className="flex flex-col gap-2">
-          {question.options.map((option) => (
-            <li key={`${question.id}-${option.id}`}>
+          {options.map((option) => (
+            <li key={`${id}-${option.id}`}>
               <QuestionOption
+                checked={userAnswers[id] === option.id}
+                disabled={pending}
                 id={option.id}
                 onSelect={handleSelect}
-                questionId={question.id}
+                questionId={id}
               >
-                <div>
-                  <option.text />
-                </div>
+                {option.text}
               </QuestionOption>
             </li>
           ))}
         </ul>
-      </section>
+      </form>
     </ViewTransition>
   );
 }

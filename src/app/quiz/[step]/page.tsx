@@ -1,11 +1,8 @@
-import type { AnswerEvent } from "@/components/question/question";
-
-import { saveUserAnswers } from "@/actions/save-answers.action";
 import { Question } from "@/components/question/question";
 import { QuestionProgressbar } from "@/components/question/question-progressbar";
 import { QuizHeader } from "@/components/question/quiz-header";
 import { questions } from "@/questions/questions";
-import { notFound, redirect } from "next/navigation";
+import { notFound } from "next/navigation";
 
 export function generateStaticParams() {
   return questions.map((_, index) => ({ step: String(index + 1) }));
@@ -22,16 +19,6 @@ export default async function QuizPage({ params }: Props) {
 
   if (!currentQuestion) return notFound();
 
-  const handleAnswer = async ({ userAnswers }: AnswerEvent) => {
-    "use server";
-    if (step === questions.length) {
-      await saveUserAnswers(userAnswers);
-      redirect("/summary");
-    } else {
-      redirect(`/quiz/${step + 1}`);
-    }
-  };
-
   return (
     <>
       <QuizHeader
@@ -40,7 +27,16 @@ export default async function QuizPage({ params }: Props) {
         step={step}
       />
       <QuestionProgressbar currentStep={currentStep} />
-      <Question onAnswer={handleAnswer} question={currentQuestion} />
+      <Question
+        id={currentQuestion.id}
+        inquiry={<currentQuestion.inquiry />}
+        step={step}
+        isLastQuestion={step === questions.length}
+        options={currentQuestion.options.map((option) => ({
+          id: option.id,
+          text: <option.text />,
+        }))}
+      />
     </>
   );
 }
