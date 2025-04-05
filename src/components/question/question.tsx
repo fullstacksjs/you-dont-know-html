@@ -41,8 +41,12 @@ export function Question({
 
   const handleSelect = (optionId: number) => {
     setUserAnswers(optionId);
+
     startTransition(() => {
-      formAction({ step, answers: userAnswers, isLastQuestion });
+      // Need to update the answers object manually to avoid the stale state
+      const answers = { ...userAnswers };
+      answers[id] = optionId;
+      formAction({ step, answers, isLastQuestion });
     });
   };
 

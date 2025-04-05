@@ -7,13 +7,15 @@ import {
 } from "@/lib/supabase/supabase-error";
 import { redirect } from "next/navigation";
 
+interface Args {
+  step: number;
+  answers: Record<number, number>;
+  isLastQuestion: boolean;
+}
+
 export const submitAnswer = async (
   _prevState: { error?: string },
-  {
-    step,
-    answers,
-    isLastQuestion,
-  }: { step: number; answers: Record<number, number>; isLastQuestion: boolean },
+  { step, answers, isLastQuestion }: Args,
 ): Promise<{ error?: string }> => {
   try {
     if (isLastQuestion) {

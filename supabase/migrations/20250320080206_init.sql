@@ -16,7 +16,7 @@ CREATE TABLE public.answer (
     is_correct boolean
 );
 
-ALTER TABLE "public"."answer" ADD CONSTRAINT "answer_game_id_fkey" FOREIGN KEY (game_id) REFERENCES game(id) ON UPDATE CASCADE ON DELETE SET NULL not valid;
+ALTER TABLE "public"."answer" ADD CONSTRAINT "answer_game_id_fkey" FOREIGN KEY (game_id) REFERENCES game(id) ON UPDATE CASCADE ON DELETE CASCADE not valid;
 ALTER TABLE "public"."answer" validate constraint "answer_game_id_fkey";
 
 GRANT DELETE ON TABLE "public"."answer" TO "anon";
