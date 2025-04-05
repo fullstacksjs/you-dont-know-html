@@ -2,6 +2,8 @@ import { compileMDX } from "@/lib/mdx/compileMdx";
 
 import type { Question } from "../Question";
 
+import explanation from "./explanation.mdx";
+
 export default {
   id: 15,
   inquiry: await compileMDX(
@@ -20,6 +22,6 @@ export default {
     },
     { id: 4, text: () => "I don't know." },
   ],
-  explanation: () => "explanation question 15",
+  explanation,
   correctAnswerId: 1,
 } satisfies Question;
