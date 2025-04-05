@@ -1,10 +1,10 @@
 "use server";
 
+import { saveUserAnswers } from "@/actions/save-answers.action";
 import {
   isDuplicationError,
   isPermissionError,
 } from "@/lib/supabase/supabase-error";
-import { sleep } from "@fullstacksjs/toolbox";
 import { redirect } from "next/navigation";
 
 interface Args {
@@ -15,14 +15,15 @@ interface Args {
 
 export const submitAnswer = async (
   _prevState: { error?: string },
-  { step, isLastQuestion }: Args,
+  { step, answers, isLastQuestion }: Args,
 ): Promise<{ error?: string }> => {
   try {
     if (isLastQuestion) {
-      // await saveUserAnswers(answers);
-      await sleep(100);
+      console.log("SaveUserAnswers");
+      await saveUserAnswers(answers);
       redirect("/summary");
     } else {
+      console.log("Redirect");
       redirect(`/quiz/${step + 1}`);
     }
   } catch (e) {
