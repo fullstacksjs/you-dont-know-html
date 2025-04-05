@@ -1,0 +1,19 @@
+> The caption must be used as a child of a table element. [Spec Reference](https://html.spec.whatwg.org/multipage/tables.html#the-caption-element)
+
+Therefore, The `caption` element is considered valid only when the parser is in the ["in table" insertion mode](https://html.spec.whatwg.org/multipage/parsing.html#parsing-main-intable).
+Otherwise, the parser must ignore the `caption` element.
+
+For in-body parsing mode:
+
+> A start tag whose tag name is one of: `caption`, `col`, `colgroup`, `frame`, `head`, `tbody`, `td`, `tfoot`, `th`, `thead`, `tr`
+>
+> Parse error. Ignore the token.
+> [Spec Reference](https://html.spec.whatwg.org/multipage/parsing.html#parsing-main-inbody)
+
+Therefore, the code is equivalent to:
+
+```html
+<div style="color: blue">
+  FullstacksJS
+</div>
+```
