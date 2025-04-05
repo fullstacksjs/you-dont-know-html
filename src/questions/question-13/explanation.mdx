@@ -1,0 +1,11 @@
+If you answered this one correctly, you either a HTML wizard or you don't know anything about HTML.
+
+### WTF is this?
+
+When the parser is in the in-body parse mode and it encounters a start tag whose tag name is `image`, it must change the tag name to `img` and reprocess it without asking any questions.
+
+Let me bring the actual quote from the spec:
+
+> **A start tag whose tag name is `image`**:
+>
+> Parse error. Change the token's tag name to `img` and reprocess it. (Don't ask.) [Spec Reference](https://html.spec.whatwg.org/multipage/parsing.html#parsing-main-inbody)
