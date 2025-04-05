@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
 
 npx --no-install husky
-./scripts/generate-supabase-types
