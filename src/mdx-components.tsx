@@ -26,6 +26,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ol: ({ children }) => (
       <ol className="list-decimal list-inside">{children}</ol>
     ),
+    ul: ({ children }) => <ul className="list-disc list-inside">{children}</ul>,
     li: ({ children }) => (
       <li className="not-[:last-child]:mb-2">{children}</li>
     ),
