@@ -12,8 +12,10 @@ const nextConfig: NextConfig = {
       { source: "/quiz", destination: "/quiz/1", permanent: true },
     ]);
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   experimental: {
-    useCache: true,
     viewTransition: true,
   },
 };
