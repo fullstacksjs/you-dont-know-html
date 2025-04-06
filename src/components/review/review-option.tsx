@@ -41,7 +41,7 @@ export function ReviewOption({
     >
       <div
         style={{ width: `${percentage}%` }}
-        className={cn("absolute opacity-20 h-full left-0 top-0", {
+        className={cn("absolute -z-10 opacity-20 h-full left-0 top-0", {
           "bg-success": isCorrectOption,
           "bg-error": isWrongAnswered,
           "bg-muted-2": !isCorrectOption && !isWrongAnswered,
