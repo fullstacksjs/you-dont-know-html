@@ -40,19 +40,20 @@
     "usehooks-ts": "3.1.1"
   },
   "devDependencies": {
-    "@fullstacksjs/eslint-config": "11.10.0",
+    "@fullstacksjs/eslint-config": "11.10.1",
     "@shikijs/rehype": "3.2.1",
+    "@types/hast": "3.0.4",
     "@types/node": "22.14.0",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "cspell": "8.18.1",
-    "eslint": "9.23.0",
+    "eslint": "9.24.0",
     "husky": "9.1.7",
     "lint-staged": "15.5.0",
     "prettier": "3.5.3",
     "shiki": "3.2.1",
     "supabase": "2.20.5",
-    "typescript": "5.8.2"
+    "typescript": "5.8.3"
   },
   "volta": {
     "node": "22.14.0",

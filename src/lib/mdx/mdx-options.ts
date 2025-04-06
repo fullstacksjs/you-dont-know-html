@@ -1,19 +1,9 @@
 import type { NextMDXOptions } from "@next/mdx";
 
 import rehypeShiki from "@shikijs/rehype";
-import { transformerRenderWhitespace } from "@shikijs/transformers";
 
-import { fullstacksJSTheme } from "./fullstacksjs-theme";
+import { shikiOptions } from "./shiki-options";
 
 export const mdxOptions: NextMDXOptions["options"] = {
-  rehypePlugins: [
-    [
-      rehypeShiki,
-      {
-        theme: fullstacksJSTheme,
-        tabindex: false,
-        transformers: [transformerRenderWhitespace({ position: "boundary" })],
-      },
-    ],
-  ],
+  rehypePlugins: [[rehypeShiki, shikiOptions]],
 };

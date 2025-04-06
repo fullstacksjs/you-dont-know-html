@@ -47,10 +47,8 @@ export function ReviewOption({
           "bg-muted-2": !isCorrectOption && !isWrongAnswered,
         })}
       />
-      <div className="flex items-center w-full">
-        <span className="flex-1 overflow-x-auto">{children}</span>
-        <span>{Math.round(percentage)}%</span>
-      </div>
+      <span className="overflow-x-auto flex-1">{children}</span>
+      <span className="shrink-0">{Math.round(percentage)}%</span>
     </ReviewLabel>
   );
 }

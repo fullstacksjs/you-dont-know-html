@@ -48,7 +48,7 @@ export function QuestionOption({
         />
         <div className="hidden size-[12px] md:size-[14px] rounded-full bg-accent peer-checked:block"></div>
       </div>
-      <div className="overflow-x-auto">{children}</div>
+      {children}
     </ReviewLabel>
   );
 }
