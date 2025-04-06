@@ -58,12 +58,5 @@
   "volta": {
     "node": "22.14.0",
     "pnpm": "10.2.0"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "esbuild",
-      "sharp",
-      "supabase"
-    ]
   }
 }
