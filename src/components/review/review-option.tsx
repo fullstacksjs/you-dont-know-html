@@ -5,6 +5,8 @@ import { cn } from "@/lib/cn";
 import { useUserAnswers } from "@/state/useAnswers";
 import { useIsClient } from "usehooks-ts";
 
+import { ReviewLabel } from "../review-label";
+
 interface Props {
   children: ReactNode;
   optionId: number;
@@ -31,15 +33,11 @@ export function ReviewOption({
     isClient && !isUserAnswerCorrect && userAnswer === optionId;
 
   return (
-    <div
-      className={cn(
-        "flex w-full items-center gap-3 rounded-md border p-3 has-checked:text-accent relative overflow-clip",
-        {
-          "border-success": isCorrectOption,
-          "border-error": isWrongAnswered,
-          "border-border-dark": !isCorrectOption && !isWrongAnswered,
-        },
-      )}
+    <ReviewLabel
+      className={cn("relative", {
+        "border-success": isCorrectOption,
+        "border-error": isWrongAnswered,
+      })}
     >
       <div
         style={{ width: `${percentage}%` }}
@@ -53,6 +51,6 @@ export function ReviewOption({
         <span className="flex-1 overflow-x-auto">{children}</span>
         <span>{Math.round(percentage)}%</span>
       </div>
-    </div>
+    </ReviewLabel>
   );
 }

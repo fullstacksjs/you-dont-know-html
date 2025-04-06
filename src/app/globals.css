@@ -40,10 +40,6 @@
   --text-question--line-height: 1.2;
   --text-question--font-weight: 700;
 
-  --text-review: 1.2rem;
-  --text-review--line-height: 1.2;
-  --text-review--font-weight: 700;
-
   --rounded-md: 4px;
 
   --shadow-radio-ring: 0 0 0 4px var(--color-background);
@@ -114,9 +110,9 @@
     width: 100%;
     display: block;
 
-    font-size: 0.9rem;
+    font-size: var(--text-sm);
     @media (width >= 48rem) {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
     }
 
     .line {
@@ -153,6 +149,7 @@
 :not(.shiki) [data-codeblock] {
   background: var(--color-shade-2) !important;
   padding: 4px 8px;
+  font-size: 0.8em;
   border-radius: 8px;
   display: inline-block;
 }

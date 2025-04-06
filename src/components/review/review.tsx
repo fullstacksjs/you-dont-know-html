@@ -10,7 +10,7 @@ export function Review({ question }: Props) {
   return (
     <section>
       <h2 className="text-2xl font-bold mb-4">Question #{question.id}</h2>
-      <div className="question text-review">
+      <div className="question text-lg font-bold">
         <question.inquiry />
       </div>
       <ul className="flex flex-col gap-4">

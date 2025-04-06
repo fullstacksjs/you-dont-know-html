@@ -7,7 +7,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     ...components,
     blockquote: ({ children }) => (
-      <blockquote className="relative bg-info/10 pl-8 pr-4 py-3 rounded border border-border-dark text-muted-3 leading-relaxed before:content-['“'] before:text-foreground/40 before:font-bold before:text-2xl before:absolute before:top-3 before:left-3 before:font-mono **:data-code:text-accent **:data-code:text-sm **:data-codeblock:text-sm flex flex-col gap-2">
+      <blockquote className="relative bg-info/10 pl-8 pr-4 py-3 rounded border border-border-dark text-muted-3 leading-relaxed before:content-['“'] before:text-foreground/40 before:font-bold before:text-2xl before:absolute before:top-3 before:left-3 before:font-mono **:data-code:text-accent **:data-codeblock:text-sm flex flex-col gap-2">
         {children}
       </blockquote>
     ),
