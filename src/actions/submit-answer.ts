@@ -19,11 +19,9 @@ export const submitAnswer = async (
 ): Promise<{ error?: string }> => {
   try {
     if (isLastQuestion) {
-      console.log("SaveUserAnswers");
       await saveUserAnswers(answers);
       redirect("/summary");
     } else {
-      console.log("Redirect");
       redirect(`/quiz/${step + 1}`);
     }
   } catch (e) {
