@@ -14,8 +14,8 @@ export default {
       text: await compileMDX(
         codeBlock`
           <p>
-            The event took place on
-            <date value="2025-06-15">June 15</date>.
+           The event took place on
+           <date value="2025-06-15">June 15</date>.
           </p>`,
       ),
     },
@@ -24,8 +24,8 @@ export default {
       text: await compileMDX(
         codeBlock`
           <p>
-            The event took place on
-            <date date="2025-06-15">June 15</date>.
+           The event took place on
+           <date date="2025-06-15">June 15</date>.
           </p>`,
       ),
     },
@@ -34,8 +34,8 @@ export default {
       text: await compileMDX(
         codeBlock`
           <p>
-            The event took place on
-            <datetime value="2025-06-15">June 15</datetime>.
+           The event took place on
+           <datetime value="2025-06-15">June 15</datetime>.
           </p>`,
       ),
     },
@@ -44,8 +44,8 @@ export default {
       text: await compileMDX(
         codeBlock`
           <p>
-            The event took place on
-            <time datetime="2025-06-15">June 15</time>.
+           The event took place on
+           <time datetime="2025-06-15">June 15</time>.
           </p>`,
       ),
     },

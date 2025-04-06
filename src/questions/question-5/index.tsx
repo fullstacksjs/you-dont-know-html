@@ -15,7 +15,7 @@ export default {
       text: await compileMDX(
         codeBlock`
           <p>
-            <dfn>CSS</dfn> control web page styles.
+           <dfn>CSS</dfn> control web page styles.
           </p>`,
       ),
     },
@@ -24,8 +24,8 @@ export default {
       text: await compileMDX(
         codeBlock`
           <p>
-            <dfn><abbr title="Cascading Style Sheets">CSS</abbr></dfn>
-            controls web page styles.
+           <dfn><abbr title="Cascading Style Sheets">CSS</abbr></dfn>
+           controls web page styles.
           </p>`,
       ),
     },
@@ -34,7 +34,7 @@ export default {
       text: await compileMDX(
         codeBlock`
           <p>
-            <dfn title="Cascading Style Sheets">CSS</dfn> is used for styling HTML.
+           <dfn title="Cascading Style Sheets">CSS</dfn> is used for styling HTML.
           </p>`,
       ),
     },
@@ -43,7 +43,7 @@ export default {
       text: await compileMDX(
         codeBlock`
           <dfn title="Cascading Style Sheets">
-            <abbr>CSS</abbr> is used for styling HTML.
+           <abbr>CSS</abbr> is used for styling HTML.
           </dfn>`,
       ),
     },

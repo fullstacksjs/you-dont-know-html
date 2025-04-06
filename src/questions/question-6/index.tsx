@@ -15,7 +15,7 @@ export default {
       text: await compileMDX(
         codeBlock`
           <p>
-            The old price was <strike>$49.99</strike>, but now it's just $29.99
+           The old price was <strike>$49.99</strike>, but now it's just $29.99
           </p>
         `,
       ),
@@ -25,7 +25,7 @@ export default {
       text: await compileMDX(
         codeBlock`
           <p>
-            The old price was <del>$49.99</del>, but now it's just $29.99
+           The old price was <del>$49.99</del>, but now it's just $29.99
           </p>
         `,
       ),
@@ -35,7 +35,7 @@ export default {
       text: await compileMDX(
         codeBlock`
           <p>
-            The old price was <del>$49.99</del>, but now it's just <ins>$29.99</ins>
+           The old price was <del>$49.99</del>, but now it's just <ins>$29.99</ins>
           </p>
         `,
       ),
@@ -45,7 +45,7 @@ export default {
       text: await compileMDX(
         codeBlock`
           <p>
-            The old price was <s>$49.99</s>, but now it's just $29.99
+           The old price was <s>$49.99</s>, but now it's just $29.99
           </p>
         `,
       ),
