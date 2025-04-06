@@ -1,6 +1,6 @@
-import { cn } from "@/lib/cn";
+import { cn } from "@app/cn";
 
-export const ReviewLabel = ({
+export const RadioLabel = ({
   className,
   ...props
 }: React.ComponentProps<"label">) => {

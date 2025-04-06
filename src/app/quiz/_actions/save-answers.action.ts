@@ -1,10 +1,10 @@
 "use server";
 
-import type { AnswerDto } from "@/lib/supabase/supabase";
-import type { UserAnswers } from "@/state/useAnswers";
+import type { UserAnswers } from "@app/state/useAnswers";
+import type { AnswerDto } from "@app/supabase/supabase";
 
-import { createGame } from "@/lib/supabase/supabase";
-import { questions } from "@/questions/questions";
+import { questions } from "@app/questions/questions";
+import { createGame } from "@app/supabase/supabase";
 
 export async function saveUserAnswers(userAnswers: UserAnswers) {
   const answers = Object.entries(userAnswers).map<AnswerDto>(

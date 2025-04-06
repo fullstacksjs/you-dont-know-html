@@ -1,4 +1,4 @@
-import { questions } from "@/questions/questions";
+import { questions } from "@app/questions/questions";
 
 interface Props {
   currentStep: number;

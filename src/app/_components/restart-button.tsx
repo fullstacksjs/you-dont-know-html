@@ -1,7 +1,7 @@
 "use client";
 
-import { cn } from "@/lib/cn";
-import { useResetUserAnswers } from "@/state/useAnswers";
+import { cn } from "@app/cn";
+import { useResetUserAnswers } from "@app/state/useAnswers";
 import Link from "next/link";
 
 import { Button } from "./button";

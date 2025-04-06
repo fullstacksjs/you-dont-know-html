@@ -1,4 +1,4 @@
-import { cn } from "@/lib/cn";
+import { cn } from "@app/cn";
 import { Slot } from "@radix-ui/react-slot";
 
 export interface ButtonProps

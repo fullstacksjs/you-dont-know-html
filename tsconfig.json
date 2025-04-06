@@ -15,7 +15,13 @@
     "jsx": "preserve",
     "incremental": true,
     "plugins": [{ "name": "next" }],
-    "paths": { "@/*": ["./src/*"] }
+    "paths": {
+      "@app/state/*": ["./src/state/*"],
+      "@app/questions/*": ["./src/questions/*"],
+      "@app/supabase/*": ["./src/lib/supabase/*"],
+      "@app/cn": ["./src/lib/cn"],
+      "@app/mdx/*": ["./src/lib/mdx/*"]
+    }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]

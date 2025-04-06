@@ -1,5 +1,5 @@
-import { codeBlock } from "@/lib/mdx/code-block";
-import { compileMDX } from "@/lib/mdx/compileMdx";
+import { codeBlock } from "@app/mdx/code-block";
+import { compileMDX } from "@app/mdx/compileMdx";
 
 import type { Question } from "../Question";
 

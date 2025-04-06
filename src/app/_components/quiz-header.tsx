@@ -1,4 +1,3 @@
-import { PreviewsIcon } from "@/components/previews-icon";
 import Link from "next/link";
 
 interface Props {
@@ -10,10 +9,10 @@ interface Props {
 export function QuizHeader({ step, getHref, getLabel }: Props) {
   return (
     <Link
-      className="text-muted-1 font-mono p-2 rounded-lg inline-flex items-center gap-3 cursor-pointer mb-2"
+      className="text-muted-1 font-mono px-1 py-2 rounded-lg inline-flex items-center gap-1 cursor-pointer mb-2"
       href={getHref(step - 1)}
     >
-      <PreviewsIcon />
+      <i className="i-arrow-left" />
       <span className="text-muted-1 font-bold">{getLabel(step)}</span>
     </Link>
   );

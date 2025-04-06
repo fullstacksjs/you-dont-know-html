@@ -1,6 +1,7 @@
-import { QuizHeader } from "@/components/question/quiz-header";
-import { Review } from "@/components/review/review";
-import { questions } from "@/questions/questions";
+import { questions } from "@app/questions/questions";
+
+import { QuizHeader } from "../_components/quiz-header";
+import { Review } from "./_components/review";
 
 export default function ReviewPage() {
   return (

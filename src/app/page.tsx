@@ -1,4 +1,4 @@
-import { RestartButton } from "@/components/restart-button";
+import { RestartButton } from "./_components/restart-button";
 
 export default function HomePage() {
   return (

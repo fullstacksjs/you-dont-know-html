@@ -1,5 +1,6 @@
-import type { Question } from "@/questions/Question";
+import type { Question } from "@app/questions/Question";
 
+import { Explanation } from "./explanation";
 import { OptionWrapper } from "./option-wrapper";
 
 interface Props {
@@ -8,7 +9,7 @@ interface Props {
 
 export function Review({ question }: Props) {
   return (
-    <section>
+    <article>
       <h2 className="text-2xl font-bold mb-4">Question #{question.id}</h2>
       <div className="question text-lg font-bold">
         <question.inquiry />
@@ -22,14 +23,9 @@ export function Review({ question }: Props) {
           />
         ))}
       </ul>
-      <details className="bg-bg-elevated px-6 py-4 mt-6 rounded">
-        <summary className="text-lg font-bold cursor-pointer focus-visible:outline-none focus-visible:underline ">
-          Explanation
-        </summary>
-        <div className="question mt-4 flex flex-col gap-6">
-          <question.explanation />
-        </div>
-      </details>
-    </section>
+      <Explanation>
+        <question.explanation />
+      </Explanation>
+    </article>
   );
 }

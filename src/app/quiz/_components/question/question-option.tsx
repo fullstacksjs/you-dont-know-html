@@ -1,11 +1,11 @@
 "use client";
 import type { ReactNode } from "react";
 
-import { cn } from "@/lib/cn";
+import { cn } from "@app/cn";
 import { noop } from "@fullstacksjs/toolbox";
 import { usePress } from "react-aria";
 
-import { ReviewLabel } from "../review-label";
+import { RadioLabel } from "../../../_components/radio-label";
 
 interface Props {
   children: ReactNode;
@@ -30,7 +30,7 @@ export function QuestionOption({
   });
 
   return (
-    <ReviewLabel
+    <RadioLabel
       tabIndex={0}
       className={cn("has-checked:bg-shade-2", {
         "animate-pulse": disabled && !checked,
@@ -49,6 +49,6 @@ export function QuestionOption({
         <div className="hidden size-[12px] md:size-[14px] rounded-full bg-accent peer-checked:block"></div>
       </div>
       {children}
-    </ReviewLabel>
+    </RadioLabel>
   );
 }

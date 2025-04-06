@@ -1,3 +1,5 @@
+import "server-only";
+
 import type { Question } from "./Question";
 
 import question1 from "./question-1";

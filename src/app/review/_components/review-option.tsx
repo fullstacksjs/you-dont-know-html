@@ -1,11 +1,12 @@
 "use client";
+
 import type { ReactNode } from "react";
 
-import { cn } from "@/lib/cn";
-import { useUserAnswers } from "@/state/useAnswers";
+import { cn } from "@app/cn";
+import { useUserAnswers } from "@app/state/useAnswers";
 import { useIsClient } from "usehooks-ts";
 
-import { ReviewLabel } from "../review-label";
+import { RadioLabel } from "../../_components/radio-label";
 
 interface Props {
   children: ReactNode;
@@ -33,7 +34,7 @@ export function ReviewOption({
     isClient && !isUserAnswerCorrect && userAnswer === optionId;
 
   return (
-    <ReviewLabel
+    <RadioLabel
       className={cn("relative", {
         "border-success": isCorrectOption,
         "border-error": isWrongAnswered,
@@ -49,6 +50,6 @@ export function ReviewOption({
       />
       <span className="overflow-x-auto flex-1">{children}</span>
       <span className="shrink-0">{Math.round(percentage)}%</span>
-    </ReviewLabel>
+    </RadioLabel>
   );
 }

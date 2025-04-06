@@ -1,7 +1,8 @@
-import { shikiOptions } from "@/lib/mdx/shiki-options";
 import { toJsxRuntime } from "hast-util-to-jsx-runtime";
 import { Fragment, jsx, jsxs } from "react/jsx-runtime";
 import { codeToHast } from "shiki";
+
+import { shikiOptions } from "./shiki-options";
 
 interface Props {
   children: string;

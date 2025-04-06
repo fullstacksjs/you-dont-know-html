@@ -1,8 +1,8 @@
 import "server-only";
-import { useMDXComponents } from "@/mdx-components";
 import { evaluate } from "@mdx-js/mdx";
 import * as runtime from "react/jsx-runtime";
 
+import { useMDXComponents } from "../../mdx-components";
 import { mdxOptions } from "./mdx-options";
 
 export const compileMDX = async (mdx: string) => {

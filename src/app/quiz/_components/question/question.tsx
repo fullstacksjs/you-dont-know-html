@@ -1,14 +1,14 @@
 "use client";
-import type { UserAnswers } from "@/state/useAnswers";
+import type { UserAnswers } from "@app/state/useAnswers";
 
-import { submitAnswer } from "@/actions/submit-answer";
-import { useStoreAnswer, useUserAnswers } from "@/state/useAnswers";
+import { useStoreAnswer, useUserAnswers } from "@app/state/useAnswers";
 import {
   startTransition,
   useActionState,
   unstable_ViewTransition as ViewTransition,
 } from "react";
 
+import { submitAnswer } from "../../_actions/submit-answer";
 import { QuestionOption } from "./question-option";
 
 export interface AnswerEvent {

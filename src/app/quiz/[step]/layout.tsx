@@ -1,9 +1,5 @@
-import { Container } from "@/components/container";
+import { Layout } from "../../_components/layout";
 
 export default function Page({ children }: React.PropsWithChildren) {
-  return (
-    <main className="flex justify-center md:items-center-safe h-[100dvh]">
-      <Container>{children}</Container>
-    </main>
-  );
+  return <Layout>{children}</Layout>;
 }

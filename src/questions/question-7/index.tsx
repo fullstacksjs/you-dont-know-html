@@ -1,4 +1,4 @@
-import { compileMDX } from "@/lib/mdx/compileMdx";
+import { compileMDX } from "@app/mdx/compileMdx";
 
 import type { Question } from "../Question";
 

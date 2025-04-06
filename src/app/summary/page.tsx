@@ -1,6 +1,7 @@
-import { Button } from "@/components/button";
-import { SummaryResult } from "@/components/summary-result";
 import Link from "next/link";
+
+import { Button } from "../_components/button";
+import { SummaryResult } from "./_components/summary-result";
 
 export default function SummaryPage() {
   return (

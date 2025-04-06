@@ -1,7 +1,7 @@
 "use client";
-import type { Question } from "@/questions/Question";
+import type { Question } from "@app/questions/Question";
 
-import { useUserAnswers } from "@/state/useAnswers";
+import { useUserAnswers } from "@app/state/useAnswers";
 import { isNull } from "@fullstacksjs/toolbox";
 import { useEffect, useState } from "react";
 

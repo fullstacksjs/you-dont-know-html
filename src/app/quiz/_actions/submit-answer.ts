@@ -1,11 +1,12 @@
 "use server";
 
-import { saveUserAnswers } from "@/actions/save-answers.action";
 import {
   isDuplicationError,
   isPermissionError,
-} from "@/lib/supabase/supabase-error";
+} from "@app/supabase/supabase-error";
 import { redirect } from "next/navigation";
+
+import { saveUserAnswers } from "./save-answers.action";
 
 interface Args {
   step: number;

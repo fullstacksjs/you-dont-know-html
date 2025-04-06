@@ -1,7 +1,7 @@
-import type { QuestionOption } from "@/questions/Question";
+import type { QuestionOption } from "@app/questions/Question";
 
-import { getAnswersCount, getGamesCount } from "@/lib/supabase/supabase";
-import { questions } from "@/questions/questions";
+import { questions } from "@app/questions/questions";
+import { getAnswersCount, getGamesCount } from "@app/supabase/supabase";
 import { isNull, percent } from "@fullstacksjs/toolbox";
 
 import { ReviewOption } from "./review-option";

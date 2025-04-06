@@ -1,8 +1,9 @@
-import { Question } from "@/components/question/question";
-import { QuestionProgressbar } from "@/components/question/question-progressbar";
-import { QuizHeader } from "@/components/question/quiz-header";
-import { questions } from "@/questions/questions";
+import { questions } from "@app/questions/questions";
 import { notFound } from "next/navigation";
+
+import { Question } from "../_components/question/question";
+import { QuestionProgressbar } from "../_components/question/question-progressbar";
+import { QuizHeader } from "../../_components/quiz-header";
 
 export function generateStaticParams() {
   return questions.map((_, index) => ({ step: String(index + 1) }));
