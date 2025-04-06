@@ -7,9 +7,7 @@ import explanation from "./explanation.mdx";
 
 export default {
   id: 15,
-  inquiry: await compileMDX(
-    "What is the purpose of the `inert` attribute in HTML?",
-  ),
+  inquiry: await compileMDX("What does the `inert` attribute do in HTML?"),
   options: [
     { id: 1, text: () => "To prevent elements from being interactive." },
     {

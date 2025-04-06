@@ -9,14 +9,14 @@ import explanation from "./explanation.mdx";
 export default {
   id: 5,
   inquiry: () =>
-    'How do you properly define the term "CSS" in HTML using semantic elements?',
+    'What is the correct way to define the term "CSS" in HTML using semantic markup?',
   options: [
     {
       id: 1,
       text: await compileMDX(
         codeBlock`
           <p>
-           <dfn>CSS</dfn> control web page styles.
+           <dfn>CSS</dfn> controls web page styles.
           </p>`,
       ),
     },
@@ -35,7 +35,7 @@ export default {
       text: await compileMDX(
         codeBlock`
           <p>
-           <dfn title="Cascading Style Sheets">CSS</dfn> is used for styling HTML.
+           <dfn title="Cascading Style Sheets">CSS</dfn> controls web page styles.
           </p>`,
       ),
     },
@@ -44,7 +44,7 @@ export default {
       text: await compileMDX(
         codeBlock`
           <dfn title="Cascading Style Sheets">
-           <abbr>CSS</abbr> is used for styling HTML.
+           <abbr>CSS</abbr> controls web page styles.
           </dfn>`,
       ),
     },

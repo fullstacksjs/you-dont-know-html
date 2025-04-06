@@ -7,7 +7,7 @@ import { IDontKnow } from "../IDontKnow";
 export default {
   id: 7,
   inquiry: await compileMDX(
-    "Which of the following best describes the purpose of the <H>\\<meter></H> element in HTML?",
+    "Which of the following best describes the purpose of the <H>{'<meter>'}</H> element in HTML?",
   ),
   options: [
     {
