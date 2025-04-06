@@ -38,7 +38,7 @@ export function QuestionOption({
       })}
       {...pressProps}
     >
-      <div className="size-[20px] md:size-[26px] shrink-0 rounded-full border-2 border-foreground grid justify-center items-center has-checked:border-accent">
+      <div className="size-[18px] md:size-[26px] shrink-0 rounded-full border-2 border-foreground grid justify-center items-center has-checked:border-accent">
         <input
           checked={checked}
           className="hidden peer"
@@ -46,7 +46,7 @@ export function QuestionOption({
           type="radio"
           onChange={noop}
         />
-        <div className="hidden size-[12px] md:size-[14px] rounded-full bg-accent peer-checked:block"></div>
+        <div className="hidden size-[10px] md:size-[14px] rounded-full bg-accent peer-checked:block"></div>
       </div>
       {children}
     </RadioLabel>
