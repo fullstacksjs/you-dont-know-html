@@ -1,7 +1,7 @@
 ![banner](https://github.com/fullstacksjs/you-dont-know-html/blob/main/assets/banner-dark.png?raw=true#gh-dark-mode-only)
 ![banner](https://github.com/fullstacksjs/you-dont-know-html/blob/main/assets/banner-light.png?raw=true#gh-light-mode-only)
 
-# You Don't Know HTML
+# You don't know HTML
 
 Think you know HTML? Think again! This interactive quiz challenges your
 understanding of HTML language.
