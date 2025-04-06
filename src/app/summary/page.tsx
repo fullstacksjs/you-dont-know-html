@@ -15,9 +15,6 @@ export default function SummaryPage() {
         <Button asChild>
           <Link href="/review">Review Choices</Link>
         </Button>
-        <Button type="button" variant="secondary">
-          Share
-        </Button>
         <Button asChild variant="secondary">
           <Link href="/">Start Over</Link>
         </Button>

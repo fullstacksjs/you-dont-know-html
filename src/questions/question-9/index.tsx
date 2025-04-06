@@ -8,11 +8,11 @@ export default {
   id: 9,
   inquiry,
   options: [
-    { id: 1, text: () => "Blue" },
-    { id: 2, text: () => "Red" },
-    { id: 3, text: () => "White" },
+    { id: 1, text: () => "Red" },
+    { id: 2, text: () => "White" },
+    { id: 3, text: () => "Blue" },
     IDontKnow,
   ],
   explanation,
-  correctAnswerId: 2,
+  correctAnswerId: 3,
 } satisfies Question;
