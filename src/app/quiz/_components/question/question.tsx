@@ -5,6 +5,7 @@ import { useStoreAnswer, useUserAnswers } from "@app/state/useAnswers";
 import {
   startTransition,
   useActionState,
+  useEffect,
   unstable_ViewTransition as ViewTransition,
 } from "react";
 
@@ -38,6 +39,10 @@ export function Question({
   const [, formAction, pending] = useActionState(submitAnswer, {});
   const setUserAnswers = useStoreAnswer(id);
   const userAnswers = useUserAnswers();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+  }, [step]);
 
   const handleSelect = (optionId: number) => {
     setUserAnswers(optionId);

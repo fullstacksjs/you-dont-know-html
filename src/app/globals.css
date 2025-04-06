@@ -6,6 +6,7 @@
   --sb-thumb-color: var(--color-shade-2);
   --font-mono: var(--font-fira-mono);
   --font-size-question: 1.2rem;
+  scroll-behavior: smooth;
 }
 
 @media (width >= 48rem) {
