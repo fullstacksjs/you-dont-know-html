@@ -94,7 +94,11 @@
     background-color: var(--color-shade);
     border: 1px solid var(--color-shade-2);
     border-radius: var(--rounded-md);
-    padding: 0.4rem 0.4rem;
+    padding: 0.4rem;
+    [data-syntax-highlight] {
+      overflow-x: auto;
+    }
+
     @media (width >= 48rem) {
       padding: 0.8rem 1rem;
     }
@@ -147,7 +151,7 @@
   }
 }
 
-[data-inline-code] {
+:not([data-syntax-highlight]) > [data-inline-code] {
   background: var(--color-shade-2);
   padding: 4px 8px;
   font-size: 0.8em;
@@ -155,8 +159,8 @@
   display: inline-block;
 }
 
-[data-syntax-highlight] [data-inline-code] {
-  background: none;
+label [data-code-block-container] {
+  overflow-x: auto;
 }
 
 a[data-external]::after {

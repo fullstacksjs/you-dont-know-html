@@ -48,7 +48,7 @@ export function ReviewOption({
           "bg-muted-2": !isCorrectOption && !isWrongAnswered,
         })}
       />
-      <span className="overflow-x-auto flex-1">{children}</span>
+      <span className="flex-1">{children}</span>
       <span className="shrink-0">{Math.round(percentage)}%</span>
     </RadioLabel>
   );

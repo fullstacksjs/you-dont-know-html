@@ -11,7 +11,6 @@ export const addCodeBlockContainerTransformer: ShikiTransformer = {
       type: "element",
       tagName: "span",
       properties: {
-        "class": "overflow-x-auto",
         "data-code-block-container": "true",
       },
       children: [node],
