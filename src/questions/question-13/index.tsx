@@ -1,5 +1,6 @@
 import type { Question } from "../Question";
 
+import { IDontKnow } from "../IDontKnow";
 import explanation from "./explanation.mdx";
 import inquiry from "./inquiry.mdx";
 
@@ -14,7 +15,7 @@ export default {
       text: () =>
         'It displays an image with a source of "https://placehold.co/600x400".',
     },
-    { id: 4, text: () => "I don't know." },
+    IDontKnow,
   ],
   explanation,
   correctAnswerId: 3,

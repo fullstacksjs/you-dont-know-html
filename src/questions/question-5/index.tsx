@@ -3,6 +3,7 @@ import { compileMDX } from "@/lib/mdx/compileMdx";
 
 import type { Question } from "../Question";
 
+import { IDontKnow } from "../IDontKnow";
 import explanation from "./explanation.mdx";
 
 export default {
@@ -47,7 +48,7 @@ export default {
           </dfn>`,
       ),
     },
-    { id: 5, text: () => "I don't know" },
+    IDontKnow,
   ],
   explanation,
   correctAnswerId: 2,

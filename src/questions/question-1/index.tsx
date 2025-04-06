@@ -2,6 +2,7 @@ import { compileMDX } from "@/lib/mdx/compileMdx";
 
 import type { Question } from "../Question";
 
+import { IDontKnow } from "../IDontKnow";
 import explanation from "./explanation.mdx";
 import inquiry from "./inquiry.mdx";
 
@@ -13,7 +14,7 @@ export default {
     { id: 2, text: await compileMDX(`<H>{"<pre>"}</H>,<H>{"<output>"}</H>`) },
     { id: 3, text: await compileMDX(`<H>{"<code>"}</H>,<H>{"<samp>"}</H>`) },
     { id: 4, text: await compileMDX(`<H>{"<pre>"}</H>,<H>{"<samp>"}</H>`) },
-    { id: 5, text: () => "I don't know" },
+    IDontKnow,
   ],
   explanation,
   correctAnswerId: 3,

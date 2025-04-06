@@ -1,5 +1,6 @@
 import type { Question } from "../Question";
 
+import { IDontKnow } from "../IDontKnow";
 import explanation from "./explanation.mdx";
 import inquiry from "./inquiry.mdx";
 
@@ -11,7 +12,7 @@ export default {
     { id: 2, text: () => "3" },
     { id: 3, text: () => "4" },
     { id: 4, text: () => "None, there's a syntax error" },
-    { id: 5, text: () => "I don't know" },
+    IDontKnow,
   ],
   explanation,
   correctAnswerId: 3,

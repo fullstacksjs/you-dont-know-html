@@ -3,6 +3,7 @@ import { compileMDX } from "@/lib/mdx/compileMdx";
 
 import type { Question } from "../Question";
 
+import { IDontKnow } from "../IDontKnow";
 import inquiry from "./inquiry.mdx";
 
 export default {
@@ -49,7 +50,7 @@ export default {
           </p>`,
       ),
     },
-    { id: 5, text: () => "I don't know" },
+    IDontKnow,
   ],
   explanation: await compileMDX(`
       > The <H>{'<time>'}</H> HTML element represents a specific period in time.

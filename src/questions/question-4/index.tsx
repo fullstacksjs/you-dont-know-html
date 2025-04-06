@@ -2,6 +2,7 @@ import { compileMDX } from "@/lib/mdx/compileMdx";
 
 import type { Question } from "../Question";
 
+import { IDontKnow } from "../IDontKnow";
 import explanation from "./explanation.mdx";
 import inquiry from "./inquiry.mdx";
 
@@ -22,7 +23,7 @@ export default {
         `It can extend the <H>{"<button>"}</H> element with a custom behavior defined in the counter-button class.`,
       ),
     },
-    { id: 4, text: () => "I don't know" },
+    IDontKnow,
   ],
   explanation,
   correctAnswerId: 3,

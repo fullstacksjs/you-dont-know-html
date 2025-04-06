@@ -2,6 +2,7 @@ import { compileMDX } from "@/lib/mdx/compileMdx";
 
 import type { Question } from "../Question";
 
+import { IDontKnow } from "../IDontKnow";
 import explanation from "./explanation.mdx";
 
 export default {
@@ -20,7 +21,7 @@ export default {
       id: 3,
       text: () => "It pauses animations and transitions for an element.",
     },
-    { id: 4, text: () => "I don't know." },
+    IDontKnow,
   ],
   explanation,
   correctAnswerId: 1,

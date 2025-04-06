@@ -2,6 +2,8 @@ import { compileMDX } from "@/lib/mdx/compileMdx";
 
 import type { Question } from "../Question";
 
+import { IDontKnow } from "../IDontKnow";
+
 export default {
   id: 7,
   inquiry: await compileMDX(
@@ -24,7 +26,7 @@ export default {
       text: () =>
         "It visually styles numeric text using CSS based on its value.",
     },
-    { id: 5, text: () => "I don't know" },
+    IDontKnow,
   ],
   explanation: await compileMDX(
     "> The <H>{'<meter>'}</H> HTML element represents either a scalar value within a known range or a fractional value. [Reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meter)",
