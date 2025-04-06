@@ -1,8 +1,8 @@
 {
   "name": "you-dont-know-html",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
-  "description": "A blog about HTML",
+  "description": "If you think you know HTML, think again.",
   "scripts": {
     "build": "next build",
     "dev": "next dev",
