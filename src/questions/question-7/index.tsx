@@ -2,7 +2,7 @@ import { compileMDX } from "@app/mdx/compileMdx";
 
 import type { Question } from "../Question";
 
-import { IDontKnow } from "../IDontKnow";
+import { IDontKnow } from "../shared-options";
 
 export default {
   id: 7,

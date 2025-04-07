@@ -1,6 +1,6 @@
 import type { Question } from "../Question";
 
-import { IDontKnow } from "../IDontKnow";
+import { IDontKnow } from "../shared-options";
 import explanation from "./explanation.mdx";
 import inquiry from "./inquiry.mdx";
 

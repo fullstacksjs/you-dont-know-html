@@ -3,7 +3,7 @@ import { compileMDX } from "@app/mdx/compileMdx";
 
 import type { Question } from "../Question";
 
-import { IDontKnow } from "../IDontKnow";
+import { IDontKnow } from "../shared-options";
 import inquiry from "./inquiry.mdx";
 
 export default {
