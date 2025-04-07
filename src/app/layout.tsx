@@ -8,6 +8,7 @@ const inter = Ubuntu({
   variable: "--font-inter",
   subsets: ["latin"],
   weight: ["400", "700"],
+  style: ["italic", "normal"],
 });
 
 const firaMono = FiraMono({
