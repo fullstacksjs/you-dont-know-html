@@ -2,6 +2,7 @@
 import type { UserAnswers } from "@app/state/useAnswers";
 
 import { useStoreAnswer, useUserAnswers } from "@app/state/useAnswers";
+import { useRouter } from "next/navigation";
 import {
   startTransition,
   useActionState,
@@ -39,6 +40,7 @@ export function Question({
   const [, formAction, pending] = useActionState(submitAnswer, {});
   const setUserAnswers = useStoreAnswer(id);
   const userAnswers = useUserAnswers();
+  const router = useRouter();
 
   useEffect(() => {
     window.scrollTo({ top: 0 });
@@ -46,12 +48,16 @@ export function Question({
 
   const handleSelect = (optionId: number) => {
     setUserAnswers(optionId);
+    if (!isLastQuestion) {
+      router.push(`/quiz/${step + 1}`);
+      return;
+    }
 
     startTransition(() => {
       // Need to update the answers object manually to avoid the stale state
       const answers = { ...userAnswers };
       answers[id] = optionId;
-      formAction({ step, answers, isLastQuestion });
+      formAction({ answers });
     });
   };
 
