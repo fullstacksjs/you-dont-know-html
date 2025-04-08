@@ -29,7 +29,7 @@
     "clsx": "2.1.1",
     "dedent": "1.5.3",
     "hast-util-to-jsx-runtime": "2.3.6",
-    "next": "15.2.4",
+    "next": "canary",
     "postcss": "8.5.3",
     "react": "19.1.0",
     "react-aria": "3.38.1",
