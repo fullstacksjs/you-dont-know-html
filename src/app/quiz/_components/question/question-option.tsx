@@ -23,6 +23,7 @@ export function QuestionOption({
   checked,
   disabled,
   onSelect,
+  ...props
 }: Props) {
   const { pressProps } = usePress({
     onPress: () => onSelect?.(id),
@@ -33,10 +34,11 @@ export function QuestionOption({
     <RadioLabel
       tabIndex={0}
       className={cn("has-checked:bg-shade-2", {
-        "animate-pulse": disabled && !checked,
+        "animate-loading": disabled && !checked,
         "cursor-pointer": !disabled,
       })}
       {...pressProps}
+      {...props}
     >
       <div className="size-[18px] md:size-[26px] shrink-0 rounded-full border-2 border-foreground grid justify-center items-center has-checked:border-accent">
         <input

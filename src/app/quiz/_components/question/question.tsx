@@ -67,10 +67,11 @@ export function Question({
         <div className="question text-question">{inquiry}</div>
         <hr className="w-full my-5 text-shade-2" />
         <ul className="flex flex-col gap-2">
-          {options.map((option) => (
+          {options.map((option, index) => (
             <li key={`${id}-${option.id}`}>
               <QuestionOption
                 checked={userAnswers[id] === option.id}
+                data-index={index}
                 disabled={pending}
                 id={option.id}
                 onSelect={handleSelect}
