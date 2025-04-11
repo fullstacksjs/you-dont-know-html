@@ -1,5 +1,4 @@
 "use client";
-import type { UserAnswers } from "@app/state/useAnswers";
 
 import { useStoreAnswer, useUserAnswers } from "@app/state/useAnswers";
 import { useRouter } from "next/navigation";
@@ -12,12 +11,6 @@ import {
 
 import { submitAnswer } from "../../_actions/submit-answer";
 import { QuestionOption } from "./question-option";
-
-export interface AnswerEvent {
-  questionId: number;
-  optionId: number;
-  userAnswers: UserAnswers;
-}
 
 interface Props {
   id: number;

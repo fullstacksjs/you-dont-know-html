@@ -19,6 +19,7 @@
       "@app/state/*": ["./src/state/*"],
       "@app/questions/*": ["./src/questions/*"],
       "@app/supabase/*": ["./src/lib/supabase/*"],
+      "@app/posthog/*": ["./src/lib/posthog/*"],
       "@app/cn": ["./src/lib/cn"],
       "@app/mdx/*": ["./src/lib/mdx/*"]
     }

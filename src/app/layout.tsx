@@ -2,6 +2,7 @@ import "./globals.css";
 
 import type { Metadata } from "next";
 
+import { PostHogProvider } from "@app/posthog/PostHogProvider";
 import { Fira_Mono as FiraMono, Ubuntu } from "next/font/google";
 
 const inter = Ubuntu({
@@ -25,7 +26,9 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
       lang="en"
       className={`${inter.className} ${firaMono.variable} bg-background text-foreground antialiased`}
     >
-      <body suppressHydrationWarning>{children}</body>
+      <body suppressHydrationWarning>
+        <PostHogProvider>{children}</PostHogProvider>
+      </body>
     </html>
   );
 }
