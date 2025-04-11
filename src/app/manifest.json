@@ -1,0 +1,23 @@
+{
+  "name": "You don't know html",
+  "short_name": "YDKHTML",
+  "description": "If you think you know HTML, think again.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#23252e",
+  "theme_color": "#23252e",
+  "icons": [
+    {
+      "src": "/icons/192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icons/512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

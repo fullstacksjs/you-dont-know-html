@@ -1,6 +1,6 @@
 import "./globals.css";
 
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 
 import { PostHogProvider } from "@app/posthog/PostHogProvider";
 import { Fira_Mono as FiraMono, Ubuntu } from "next/font/google";
@@ -18,7 +18,31 @@ const firaMono = FiraMono({
   weight: ["500"],
 });
 
-export const metadata: Metadata = { title: "You don't know html" };
+const title = "You don't know html";
+const description = "If you think you know HTML, think again.";
+const images = { url: "/og.png", alt: title };
+
+export const metadata: Metadata = {
+  title,
+  description,
+  keywords: ["html", "quiz", "challenge"],
+  metadataBase: new URL("https://youdontknowhtml.com"),
+  openGraph: {
+    description,
+    images,
+    title,
+  },
+  twitter: {
+    images,
+    title,
+    card: "summary_large_image",
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#23252e",
+  colorScheme: "dark",
+};
 
 export default function RootLayout({ children }: React.PropsWithChildren) {
   return (
