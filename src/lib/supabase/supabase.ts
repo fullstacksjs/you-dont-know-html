@@ -68,3 +68,14 @@ export async function getGamesCount(questionId: number) {
 
   return count;
 }
+
+export async function getGamesCountWithCorrectAnswers(correctAnswers: number) {
+  const client = await createSupabaseClient();
+  const { data, error } = await client.rpc("get_games_with_correct_answers", {
+    min_correct_answers: correctAnswers,
+  });
+
+  if (error) throw new Error("Failed to get rank", { cause: error });
+
+  return data.length;
+}
