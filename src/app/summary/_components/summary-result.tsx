@@ -54,16 +54,20 @@ export function SummaryResult() {
       });
   }, [correctAnswers]);
 
-  if (loading || isPercentileLoading) return <Skeleton />;
+  if (loading) return <Skeleton />;
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-4 items-center">
       <h2 className="text-white text-3xl font-bold text-center">
         {getQuizResultMessage(correctAnswers, total)}
       </h2>
-      <p className="text-center text-muted-1">
-        {getPercentileMessage(percentile)}
-      </p>
+      {isPercentileLoading ? (
+        <output className="inline-block w-72 h-7 bg-muted-2 animate-pulse rounded-md" />
+      ) : (
+        <p className="text-center text-muted-1">
+          {getPercentileMessage(percentile)}
+        </p>
+      )}
     </div>
   );
 }
