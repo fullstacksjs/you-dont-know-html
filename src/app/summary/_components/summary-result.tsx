@@ -9,19 +9,45 @@ import { AnswersContext } from "./answers-provider";
 import { Skeleton } from "./skeleton";
 
 function getQuizResultMessage(score: number, total: number) {
-  if (score === 0) {
+  const percentage = (score * 100) / total;
+
+  if (percentage === 0) {
     return (
       <>
         😅 You got 0 out of {total}.
         <br />
-        At least you're honest!
+        At least you're honest! Better luck next time. 😉
       </>
     );
-  } else if (score === total) {
+  } else if (percentage === 100) {
     return (
       <>
         🔥 Flawless! You nailed all {total} questions.
-        <br /> Maybe you *do* know HTML after all.
+        <br /> You really *know* your HTML!
+      </>
+    );
+  } else if (percentage >= 75) {
+    return (
+      <>
+        👍 You scored {score} out of {total}.
+        <br />
+        Excellent! You're really close to perfection. Keep up the great work!
+      </>
+    );
+  } else if (percentage >= 50) {
+    return (
+      <>
+        👍 You scored {score} out of {total}.
+        <br />
+        Great job! You're on the right track — keep going, you're doing awesome!
+      </>
+    );
+  } else if (percentage >= 25) {
+    return (
+      <>
+        You scored {score} out of {total}.
+        <br />
+        Not bad! You’re getting there. Keep practicing and you'll improve fast!
       </>
     );
   } else {
@@ -29,7 +55,7 @@ function getQuizResultMessage(score: number, total: number) {
       <>
         You scored {score} out of {total}.
         <br />
-        Not bad! Keep sharpening those tags.
+        Not bad! Keep sharpening those tags. You're on the right track!
       </>
     );
   }
