@@ -23,7 +23,7 @@ function getQuizResultMessage(score: number, total: number) {
     return (
       <>
         🔥 Flawless! You nailed all {total} questions.
-        <br /> You really *know* your HTML!
+        <br /> You really *know* HTML!
       </>
     );
   } else if (percentage >= 75) {
