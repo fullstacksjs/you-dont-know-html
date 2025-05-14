@@ -3,7 +3,7 @@
 
 # You don't know HTML
 
-Think you know HTML? Think again! This interactive quiz challenges your
+Think you know HTML? [Take the test](https://youdontknowhtml.com)! This interactive quiz challenges your
 understanding of HTML language.
 
 ## Contributing
@@ -18,7 +18,7 @@ understanding of HTML language.
 
 1. Clone the repository:
 2. Install dependencies:
-3. Start Supabase server
+3. Start the Supabase server
    ```bash
    npm run supabase:start
    ```
@@ -26,7 +26,7 @@ understanding of HTML language.
    ```bash
    cp .env.example .env
    ```
-5. Set variables for you local Supabase instance.
+5. Set variables for your local Supabase instance.
 6. Start the development server:
    ```bash
    pnpm dev
