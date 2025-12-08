@@ -6,7 +6,7 @@ import {
   startTransition,
   useActionState,
   useEffect,
-  unstable_ViewTransition as ViewTransition,
+  ViewTransition,
 } from "react";
 
 import { submitAnswer } from "../../_actions/submit-answer";

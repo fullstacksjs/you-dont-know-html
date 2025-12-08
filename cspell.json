@@ -24,6 +24,7 @@
     ".github/**",
     ".env.example",
     ".env",
-    "src/lib/supabase/Database.ts"
+    "src/lib/supabase/Database.ts",
+    "pnpm-workspace.yaml"
   ]
 }

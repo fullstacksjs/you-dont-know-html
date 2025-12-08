@@ -1,5 +1,8 @@
 onlyBuiltDependencies:
   - core-js
+  - esbuild
   - sharp
   - supabase
+  - unrs-resolver
+
 savePrefix: ""
