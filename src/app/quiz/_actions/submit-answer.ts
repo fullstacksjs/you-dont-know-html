@@ -26,6 +26,7 @@ export const submitAnswer = async (
     if (isDuplicationError(e)) {
       return { error: "You have already submitted your answers." };
     }
+
     throw e;
   }
 };

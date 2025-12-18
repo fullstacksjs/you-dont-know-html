@@ -1,4 +1,5 @@
 "use client";
+
 import type { ReactNode } from "react";
 
 import { cn } from "@app/cn";
@@ -48,7 +49,7 @@ export function QuestionOption({
           type="radio"
           onChange={noop}
         />
-        <div className="hidden size-[10px] md:size-[14px] rounded-full bg-accent peer-checked:block"></div>
+        <div className="hidden size-[10px] md:size-[14px] rounded-full bg-accent peer-checked:block" />
       </div>
       {children}
     </RadioLabel>

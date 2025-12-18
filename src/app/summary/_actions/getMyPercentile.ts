@@ -1,4 +1,5 @@
 "use server";
+
 import { questions } from "@app/questions/questions";
 import { getGamesCountWithCorrectAnswers } from "@app/supabase/supabase";
 import { percent } from "@fullstacksjs/toolbox";

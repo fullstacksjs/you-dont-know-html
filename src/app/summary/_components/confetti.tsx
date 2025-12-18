@@ -1,4 +1,5 @@
 "use client";
+
 import { use } from "react";
 import Pride from "react-canvas-confetti/dist/presets/pride";
 

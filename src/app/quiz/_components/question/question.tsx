@@ -41,6 +41,7 @@ export function Question({
 
   const handleSelect = (optionId: number) => {
     setUserAnswers(optionId);
+
     if (!isLastQuestion) {
       router.push(`/quiz/${step + 1}`);
       return;

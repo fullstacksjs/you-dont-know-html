@@ -16,6 +16,7 @@ export const AnswersContext = createContext<{
   total: 0,
   loading: true,
 });
+AnswersContext.displayName = "AnswersContext";
 
 export const AnswersProvider = ({
   children,
@@ -30,6 +31,7 @@ export const AnswersProvider = ({
   const loading = !isClient || isNull(correctAnswers);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect, @eslint-react/hooks-extra/no-direct-set-state-in-use-effect
     setCorrectAnswers(
       questions.filter((q) => answers[q.id] === q.correctAnswerId).length,
     );

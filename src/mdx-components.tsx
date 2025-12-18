@@ -2,7 +2,6 @@ import type { MDXComponents } from "mdx/types";
 
 import { InlineCode } from "./lib/mdx/inline-code";
 
-// eslint-disable-next-line @eslint-react/hooks-extra/no-useless-custom-hooks, @eslint-react/hooks-extra/ensure-custom-hooks-using-other-hooks
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     ...components,
@@ -34,8 +33,6 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     H: ({ children }) => {
       return <InlineCode>{children}</InlineCode>;
     },
-    code: (props) => (
-      <code className="inline" data-inline-code {...props}></code>
-    ),
+    code: (props) => <code className="inline" data-inline-code {...props} />,
   };
 }

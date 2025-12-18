@@ -1,8 +1,7 @@
 import { cn } from "@app/cn";
 import { Slot } from "@radix-ui/react-slot";
 
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
   className?: string;
   variant?: "contained" | "secondary";

@@ -9,7 +9,7 @@ export default function HomePage() {
         </h2>
         <p className="text-muted-1 text-center text-lg">
           Created with{" "}
-          <i aria-label="keyboard" className="i-keyboard" role="img"></i> in{" "}
+          <i aria-label="keyboard" className="i-keyboard" role="img" /> in{" "}
           <a
             data-external
             className="underline underline-offset-4"

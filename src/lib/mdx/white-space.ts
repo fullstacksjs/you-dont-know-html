@@ -2,11 +2,11 @@ import type { Element, Root, Text } from "hast";
 import type { ShikiTransformer } from "shiki";
 
 function findCode(root: Root): Element {
-  let current = root.children[0];
+  let current = root.children.at(0);
 
   while (current?.type === "element") {
     if (current.tagName === "code") return current;
-    current = current.children[0];
+    current = current.children.at(0);
 
     if (!current) throw new Error("No code element found");
   }
@@ -24,7 +24,7 @@ function isSpace(part: string): boolean {
 }
 
 export function splitSpaces(node: Text): string[] {
-  const parts = node.value.split(/([ \t])/).filter((i) => i.length);
+  const parts = node.value.split(/([\t ])/).filter((i) => i.length);
 
   const leftCount = Math.max(
     parts.findIndex((part) => !isSpace(part)),
@@ -53,7 +53,7 @@ export const renderWhitespaceTransformer: ShikiTransformer = {
         const index = elements.indexOf(token);
         if (index !== 0) return token;
 
-        const node = token.children[0];
+        const node = token.children.at(0);
         if (node?.type !== "text" || !node.value) return token;
 
         const parts = splitSpaces(node);
@@ -66,10 +66,12 @@ export const renderWhitespaceTransformer: ShikiTransformer = {
           };
           clone.children = [{ type: "text", value: part }];
           const className = classMap[part];
+
           if (className) {
             this.addClassToHast(clone, className);
             delete clone.properties.style;
           }
+
           return clone;
         });
       });

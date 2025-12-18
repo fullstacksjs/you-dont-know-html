@@ -42,6 +42,7 @@ function PostHogPageView() {
     if (!pathname) return;
 
     const url = new URL(pathname, window.location.origin);
+
     if (searchParams.toString()) {
       url.search = searchParams.toString();
     }

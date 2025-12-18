@@ -37,7 +37,7 @@ export const ShareButton = () => {
           shareData.hashtags,
         )}`}
       >
-        Share on <i aria-label="x logo" className="i-x ml-1" role="img"></i>
+        Share on <i aria-label="x logo" className="i-x ml-1" role="img" />
       </a>
     </Button>
   );
