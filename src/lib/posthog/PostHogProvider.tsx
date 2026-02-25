@@ -1,11 +1,11 @@
 "use client";
 
-import { usePathname, useSearchParams } from "next/navigation";
-import posthog from "posthog-js";
 import {
   PostHogProvider as BasePostHogProvider,
   usePostHog,
-} from "posthog-js/react";
+} from "@posthog/react";
+import { usePathname, useSearchParams } from "next/navigation";
+import posthog from "posthog-js";
 import { Suspense, useEffect } from "react";
 
 import { configSchema } from "./config";

@@ -1,6 +1,7 @@
 onlyBuiltDependencies:
   - core-js
   - esbuild
+  - protobufjs
   - sharp
   - supabase
   - unrs-resolver
