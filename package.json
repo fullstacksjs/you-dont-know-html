@@ -57,6 +57,6 @@
     "prettier": "3.8.1",
     "shiki": "4.0.2",
     "supabase": "2.84.0",
-    "typescript": "6.0.2"
+    "typescript": "^5"
   }
 }
