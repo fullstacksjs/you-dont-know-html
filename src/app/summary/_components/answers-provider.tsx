@@ -4,19 +4,10 @@ import type { Question } from "@app/questions/Question";
 
 import { useUserAnswers } from "@app/state/useAnswers";
 import { isNull } from "@fullstacksjs/toolbox";
-import { createContext, useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useIsClient } from "usehooks-ts";
 
-export const AnswersContext = createContext<{
-  correctAnswers: number;
-  loading: boolean;
-  total: number;
-}>({
-  correctAnswers: 0,
-  total: 0,
-  loading: true,
-});
-AnswersContext.displayName = "AnswersContext";
+import { AnswersContext } from "./answers-context";
 
 export const AnswersProvider = ({
   children,
@@ -31,7 +22,6 @@ export const AnswersProvider = ({
   const loading = !isClient || isNull(correctAnswers);
 
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect, @eslint-react/hooks-extra/no-direct-set-state-in-use-effect
     setCorrectAnswers(
       questions.filter((q) => answers[q.id] === q.correctAnswerId).length,
     );

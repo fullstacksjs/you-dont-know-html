@@ -4,16 +4,16 @@ import { use } from "react";
 import { useIsClient } from "usehooks-ts";
 
 import { Button } from "../../_components/button";
-import { AnswersContext } from "./answers-provider";
+import { AnswersContext } from "./answers-context";
 
 function getTweetText(score: number, total: number) {
   if (score === 0) {
     return `I scored 0/${total} on "You Don't Know HTML" 😅 Apparently, I *really* don't. Try it and do better:`;
   } else if (score === total) {
     return `I got a perfect ${total}/${total} on "You Don't Know HTML" 🔥 Guess I actually *do* know HTML! Think you can match me?`;
-  } else {
-    return `I scored ${score}/${total} on "You Don't Know HTML"! Not bad, but can you do better? 👀`;
   }
+
+  return `I scored ${score}/${total} on "You Don't Know HTML"! Not bad, but can you do better? 👀`;
 }
 
 export const ShareButton = () => {
