@@ -17,7 +17,6 @@ export const CorrectAnswerCount = ({ questions }: Props) => {
   const [correctAnswers, setCorrectAnswers] = useState<number>();
 
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect, @eslint-react/hooks-extra/no-direct-set-state-in-use-effect
     setCorrectAnswers(
       questions.filter((q) => answers[q.id] === q.correctAnswerId).length,
     );

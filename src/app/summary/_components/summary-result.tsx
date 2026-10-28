@@ -5,7 +5,7 @@ import { use, useEffect, useState } from "react";
 import { useIsClient } from "usehooks-ts";
 
 import { getMyPercentile } from "../_actions/getMyPercentile";
-import { AnswersContext } from "./answers-provider";
+import { AnswersContext } from "./answers-context";
 import { Skeleton } from "./skeleton";
 
 function getQuizResultMessage(score: number, total: number) {
@@ -50,15 +50,15 @@ function getQuizResultMessage(score: number, total: number) {
         Not bad! You’re getting there. Keep practicing and you'll improve fast!
       </>
     );
-  } else {
-    return (
-      <>
-        You scored {score} out of {total}.
-        <br />
-        Not bad! Keep sharpening those tags. You're on the right track!
-      </>
-    );
   }
+
+  return (
+    <>
+      You scored {score} out of {total}.
+      <br />
+      Not bad! Keep sharpening those tags. You're on the right track!
+    </>
+  );
 }
 
 function getPercentileMessage(percentile: number) {

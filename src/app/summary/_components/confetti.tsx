@@ -3,7 +3,7 @@
 import { use } from "react";
 import Pride from "react-canvas-confetti/dist/presets/pride";
 
-import { AnswersContext } from "./answers-provider";
+import { AnswersContext } from "./answers-context";
 
 export const Confetti = () => {
   const { correctAnswers, loading, total } = use(AnswersContext);
